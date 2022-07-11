@@ -21,7 +21,7 @@ const nullSignature = [
 ];
 const blockReward = 50000;
 
-const genesisDate = "2021-11-01T00:00:00.000Z";
+const genesisDate = "2022-07-01T00:00:00.000Z";
 const genesisFaucetTransaction = new Transaction(
   nullAddress, // from address
   faucetAddress, // to Address
@@ -35,6 +35,7 @@ const genesisFaucetTransaction = new Transaction(
   0, // minedInBlockIndex
   true // transferSuccessful
 );
+
 
 const genesisBlock = new Block(
   0, // block index
