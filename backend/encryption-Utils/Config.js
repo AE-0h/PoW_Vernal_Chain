@@ -3,12 +3,12 @@ const Transaction = require("../Transaction");
 const CryptoUtils = require("./Encryption-tools");
 
 const faucetPrivateKey =
-  "c30331146ab8cd77fad2662019a8bc9029fe8610efdedb4aaee8f85ad4feb356";
+  "daa00edde3309cd552fdab8099c0887c15e7cab78401c17f863b14a6fd6980e6";
 const faucetPublicKey = CryptoUtils.privateKeyToPublicKey(faucetPrivateKey);
 const faucetAddress = CryptoUtils.publicKeyToAddress(faucetPublicKey);
 
 const minerPrivateKey =
-  "fb71fe8f62a85d4f6e8be3a1de231c2ab2744d8f919885c23142f246e00634eb";
+  "b86e3088b8dfbe9a667caddd42357b9953b0d1fdd5009c1c2a2f9ea793b781dc";
 const minerPublicKey = CryptoUtils.privateKeyToPublicKey(faucetPrivateKey);
 const minerAddress = CryptoUtils.publicKeyToAddress(faucetPublicKey);
 
