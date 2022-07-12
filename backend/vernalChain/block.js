@@ -1,4 +1,4 @@
-const CryptoUtils = require("./encryption-Utils/Encryption-tools");
+const CryptoUtils = require("../encryption-Utils/Encryption-tools");
 
 module.exports = class Block {
   constructor(

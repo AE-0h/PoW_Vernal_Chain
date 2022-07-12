@@ -2,8 +2,8 @@ const sha256 = require('sha256');
 const currentNodeUrl = 3001;
 const Transaction = require('./transaction');
 const Block = require('./block');
-const ValidationUtils = require('./encryption-Utils/Validation-tools');
-const config = require('./encryption-Utils/Config');
+const ValidationUtils = require('../encryption-Utils/Validation-tools');
+const config = require('../encryption-Utils/Config');
 
 /**
  * @notice - Creates a new blockchain
@@ -110,7 +110,7 @@ class Blockchain {
             Number(tran.value) + Number(tran.fee)
         )
             return {
-                errorMsg: 'Unsufficient sender balance.',
+                errorMsg: 'Insufficient sender balance.',
             };
 
         this.pendingTransactions.push(tran);

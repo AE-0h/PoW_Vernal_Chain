@@ -1,5 +1,5 @@
-const Block = require("../block");
-const Transaction = require("../Transaction");
+const Block = require("../vernalChain/block");
+const Transaction = require("../vernalChain/transaction");
 const CryptoUtils = require("./Encryption-tools");
 
 const faucetPrivateKey =
