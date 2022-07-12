@@ -4,6 +4,7 @@
   "description": "Vernal_Chain a BYZ_SOL educational PoW Blockchain",
   "main": "blockchain.js",
   "scripts": {
+    "start": "node vernalNode.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
