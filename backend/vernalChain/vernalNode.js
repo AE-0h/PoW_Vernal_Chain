@@ -1,5 +1,5 @@
 const express = require("express");
-const Blockchain = require("./blockchain");
+const Blockchain = require("./_vernalChain");
 const uuid = require("uuid/v1");
 const port = 3000;
 const rp = require("request-promise");
@@ -39,6 +39,7 @@ app.get("/info", (req, res) => {
 app.get("/addresses", (req, res) => {
     let allAddresses = vernalChain.getAllAddresses();
     res.json(allAddresses);
+    console.log(allAddresses);
 });
 
 //========================= Transactions =========================
@@ -51,6 +52,7 @@ app.get("/address/:address/transactions", (req, res) => {
     let address = req.params.address;
     let tranHistory = vernalChain.getTransactionHistory(address);
     res.json(tranHistory);
+    console.log(tranHistory);
 });
 
 /**
@@ -63,6 +65,7 @@ app.get("/address/:address/balance", (req, res) => {
     let balance = vernalChain.getAccountBalance(address);
     if (balance.errorMsg) res.status(StatusCodes.NOT_FOUND);
     res.json(balance);
+    console.log(balance);
 });
 
 // adds a transaction to a nodes pending transactions
