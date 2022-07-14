@@ -3,6 +3,12 @@
 /backend/node_modules
 /.pnp
 .pnp.js
+/backend/package-lock.json
 
+
+
+# dev
 .env (for development)
+.env.local (for development)
+
 

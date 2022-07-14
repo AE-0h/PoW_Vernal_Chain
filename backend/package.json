@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Vernal_Chain a BYZ_SOL educational PoW Blockchain",
-  "main": "blockchain.js",
+  "main": "vernalChain.js",
   "scripts": {
-    "start": "nodemon ./vernalChain/vernalNode.js",
+    "start": "nodemon ./vernalNode/_vernalNode.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

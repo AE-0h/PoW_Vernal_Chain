@@ -1,5 +1,5 @@
 const express = require("express");
-const Blockchain = require("./_vernalChain");
+const Blockchain = require("../vernalChain/_vernalChain");
 const uuid = require("uuid/v1");
 const port = 3000;
 const rp = require("request-promise");
