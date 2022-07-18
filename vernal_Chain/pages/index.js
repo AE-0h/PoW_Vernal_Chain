@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Wallet.module.css";
-import Footer from "../Components/Footer";
+import styles from "../styles/vernalMain.module.css";
+import Footer from "../components/Footer";
 
 export default function Wallet() {
   return (
