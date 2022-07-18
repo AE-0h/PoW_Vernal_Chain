@@ -8,7 +8,7 @@ const Footer = () => {
         rel="noreferrer"
         target="_blank"
       >
-         <svg xmlns="http://www.w3.org/2000/svg" height="10%" width="10%">
+         <svg xmlns="http://www.w3.org/2000/svg" height="20%" width="10%">
             <filter id="filter-wps374rdt">
               <feTurbulence baseFrequency="0.42038" numOctaves="2" seed="10">
                 {" "}
@@ -18,8 +18,8 @@ const Footer = () => {
               </feColorMatrix>{" "}
             </filter>{" "}
             <rect
-              width="100%"
-              height="100%"
+              width="10%"
+              height="10%"
               fill="rgb(115,2,183)"
               className="bgRect"
             >

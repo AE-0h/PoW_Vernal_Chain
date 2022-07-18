@@ -37,13 +37,6 @@ export default function Wallet() {
                 </span>
               </div>
               <div className="col-lg-4 align-items-right d-flex">
-                <Image
-                  src="/images/eggMass.png"
-                  alt="vernal egg-mass"
-                  className="img-fluid"
-                  width="120px"
-                  height="80px"
-                />
               </div>
             </div>
           </div>
