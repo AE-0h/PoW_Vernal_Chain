@@ -36,13 +36,13 @@ export default function Wallet() {
                   </Link>
                 </span>
               </div>
-              <div className="col-lg-4 align-items-center d-flex">
+              <div className="col-lg-4 align-items-right d-flex">
                 <Image
                   src="/images/eggMass.png"
                   alt="vernal egg-mass"
                   className="img-fluid"
-                  width="1200px"
-                  height="800px"
+                  width="120px"
+                  height="80px"
                 />
               </div>
             </div>

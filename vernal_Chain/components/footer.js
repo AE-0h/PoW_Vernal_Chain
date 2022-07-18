@@ -1,4 +1,4 @@
-import styles from "../styles/vernalMain.module.css";
+import styles from "/styles/vernalMain.module.css";
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
               width="100%"
               height="100%"
               fill="rgb(115,2,183)"
-              class="bgRect"
+              className="bgRect"
             >
               {" "}
             </rect>{" "}
