@@ -21,7 +21,7 @@
 .background {
   background: rgb(2, 0, 36);
   background: linear-gradient(
-    180deg,
+    45deg,
     rgb(229, 255, 205) 0%,
     rgb(39, 25, 12) 35%,
     rgb(189, 237, 255) 100%
@@ -31,6 +31,7 @@
   position: relative;
   padding: 50px;
 }
+
 
 .noDecor {
   text-decoration: none;
@@ -45,7 +46,7 @@
   background: linear-gradient(
     180deg,
     rgb(229, 255, 205) 0%,
-    rgb(39, 25, 12) 35%,
+    rgb(84, 68, 54) 35%,
     rgb(189, 237, 255) 100%
   );
   height: 8rem;
