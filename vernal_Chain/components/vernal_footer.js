@@ -8,7 +8,7 @@ const Footer = () => {
         rel="noreferrer"
         target="_blank"
       >
-         <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%">
+         <svg xmlns="http://www.w3.org/2000/svg" height="10%" width="10%">
             <filter id="filter-wps374rdt">
               <feTurbulence baseFrequency="0.42038" numOctaves="2" seed="10">
                 {" "}

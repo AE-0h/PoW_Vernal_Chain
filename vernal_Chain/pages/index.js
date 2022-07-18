@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "/styles/vernalMain.module.css";
-import Footer from "../components/Footer";
+import Footer from "../components/vernal_footer";
 
 export default function Wallet() {
   return (

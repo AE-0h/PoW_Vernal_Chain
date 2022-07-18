@@ -1,7 +1,7 @@
 // import "bootstrap/dist/css/bootstrap.css";
 // import "bootstrap-icons/font/bootstrap-icons.json";
 import Navbar from "./dropNav";
-import Footer from "./Footer";
+import Footer from "./vernal_footer";
 
 const Layout = ({ children }) => {
   return (

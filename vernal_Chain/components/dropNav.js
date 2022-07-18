@@ -9,14 +9,14 @@ const Navbar = () => {
           <div className="col-sm-3 d-inline-flex align-items-center">
             <div className="d-inline-flex align-items-center">
               <Image
-                src="/images/block.png"
+                src="/images/eggMass.png"
                 width="30"
                 height="30"
                 className="d-inline-block align-center"
                 alt=""
               ></Image>
-              {/* <Link href="/">
-                <a className="nav-link fs-5">Noobchain</a>
+              <Link href="/">
+                <a className="nav-link fs-5">Vernal Chain</a>
               </Link>
             </div>
           </div>
@@ -36,7 +36,7 @@ const Navbar = () => {
               </Link>
               <Link href="/nodes">
                 <a className="nav-link fs-5">Nodes</a>
-              </Link> */}
+              </Link>
               <Link href="http://localhost:3001/blockchain">
                 <a
                   className="nav-link fs-5"

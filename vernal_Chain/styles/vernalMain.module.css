@@ -6,22 +6,28 @@
 .github {
   text-decoration: none;
   cursor: pointer;
-  color: rgb(54, 146, 227);
+  color: rgb(252, 239, 215);
+}
+
+.col-lg-4-align-items-right-d-flex{
+  align-items: right;
+  display: flex;
+  background-color: rgb(246, 195, 101);
 }
 
 .github:after {
-  content: "Jason Schwarz";
+  content: "AE-0h";
 }
 
 .github:hover:after {
-  content: "Check me out on Github";
-  color: aliceblue;
+  content: "Gitty-Up";
+  color: rgb(207, 249, 224);
 }
 
 .background {
   /* background: rgb(2, 0, 36); */
   background: linear-gradient(
-    45deg,
+    280deg,
     rgb(229, 255, 205) 0%,
     rgb(39, 25, 12) 35%,
     rgb(189, 237, 255) 100%
@@ -44,7 +50,7 @@
   left: 0;
   /* background: rgb(2, 0, 36); */
   background: linear-gradient(
-    180deg,
+    220deg,
     rgb(229, 255, 205) 0%,
     rgb(84, 68, 54) 35%,
     rgb(189, 237, 255) 100%
