@@ -39,7 +39,7 @@ export default function Wallet() {
               <div className="col-lg-4 align-items-center d-flex">
                 <Image
                   src="../public/images/eggMass.png"
-                  alt="blocks-in-hand"
+                  alt="vernal egg-mass"
                   className="img-fluid"
                   width="1200px"
                   height="800px"
