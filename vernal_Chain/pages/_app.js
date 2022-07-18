@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Layout from "../Components/mainLayout";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+        <Layout style={{ minWidth: "700px" }}>
+          <Component {...pageProps} />
+        </Layout>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

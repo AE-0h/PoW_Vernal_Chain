@@ -1,33 +1,57 @@
+import Link from "next/link";
+import Image from "next/image";
 
-const dropNav = () => {
+const Navbar = () => {
   return (
     <>
-      <nav>
-        <div class="navicon"> &#9776;</div>
-        <div class="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%">
-            <filter id="filter-wps374rdt">
-              <feTurbulence baseFrequency="0.42038" numOctaves="2" seed="10">
-                {" "}
-              </feTurbulence>{" "}
-              <feColorMatrix values="3.1 -6.5 -2.6 -9 -2.3 -5.1 -1 -2.1 1.3 1.8 0 0.8 6.9 -4.1 1.9 0.9 4.4 6.9 3.2 0">
-                {" "}
-              </feColorMatrix>{" "}
-            </filter>{" "}
-            <rect
-              width="100%"
-              height="100%"
-              fill="rgb(115,2,183)"
-              class="bgRect"
-            >
-              {" "}
-            </rect>{" "}
-            <rect width="100%" height="100%" filter="url(#filter-wps374rdt)">
-              {" "}
-            </rect>{" "}
-          </svg>{" "}
-        </div>{" "}
-      </nav>{" "}
+      <div className="container">
+        <div className="row py-2">
+          <div className="col-sm-3 d-inline-flex align-items-center">
+            <div className="d-inline-flex align-items-center">
+              <Image
+                src="/images/block.png"
+                width="30"
+                height="30"
+                className="d-inline-block align-center"
+                alt=""
+              ></Image>
+              {/* <Link href="/">
+                <a className="nav-link fs-5">Noobchain</a>
+              </Link>
+            </div>
+          </div>
+          <div className="col-sm-9 d-flex flex-row-reverse">
+            <div className=" d-inline-flex  ">
+              <Link href="/explorer">
+                <a className="nav-link fs-5">Explorer</a>
+              </Link>
+              <Link href="/faucet">
+                <a className="nav-link fs-5">Faucet</a>
+              </Link>
+              <Link href="/wallet">
+                <a className="nav-link fs-5">Wallet</a>
+              </Link>
+              <Link href="/miner">
+                <a className="nav-link fs-5">Miner</a>
+              </Link>
+              <Link href="/nodes">
+                <a className="nav-link fs-5">Nodes</a>
+              </Link> */}
+              <Link href="http://localhost:3001/blockchain">
+                <a
+                  className="nav-link fs-5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Blockchain
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
+
+export default Navbar;

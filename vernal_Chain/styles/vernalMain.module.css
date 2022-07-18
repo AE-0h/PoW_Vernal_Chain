@@ -19,7 +19,7 @@
 }
 
 .background {
-  background: rgb(2, 0, 36);
+  /* background: rgb(2, 0, 36); */
   background: linear-gradient(
     45deg,
     rgb(229, 255, 205) 0%,
@@ -42,7 +42,7 @@
   bottom: 0;
   width: 100%;
   left: 0;
-  background: rgb(2, 0, 36);
+  /* background: rgb(2, 0, 36); */
   background: linear-gradient(
     180deg,
     rgb(229, 255, 205) 0%,
