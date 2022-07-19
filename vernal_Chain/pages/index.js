@@ -9,8 +9,12 @@ import { Flex, Spacer, Box, Heading, ButtonGroup, Button, Center, Container, Sim
 export default function Wallet() {
   return (
     <>
-     <Vernalnav /> 
+    <div
+        className={styles.background}
+      >
+     <Vernalnav />
       <Footer />
+      </div>
     </>
   );
 }

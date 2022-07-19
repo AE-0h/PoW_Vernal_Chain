@@ -1,13 +1,11 @@
 import { Box, Badge, Flex} from '@chakra-ui/react';
-import { StarIcon } from '@chakra-ui/icon';
-import Image from "next/image";
 
 
 const Card = () => {
 
     const outerBoxStyles = {
-        shadow: '3xl',
-        borderRadius: 'lg',
+        shadow: 'dark',
+        borderRadius: '3xl',
         border:'1px',
         borderColor:'gray.800',
         boxSize: '800px',
@@ -18,7 +16,7 @@ const Card = () => {
        }
     
       const innerBoxStyles = {
-        borderRadius: 'lg',
+        borderRadius: '3xl',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

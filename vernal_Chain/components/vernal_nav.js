@@ -1,12 +1,13 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Container, SimpleGrid } from '@chakra-ui/react';
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Container, SimpleGrid, Box } from '@chakra-ui/react';
 import Card from "../components/vernal_cards";
 
 const Vernalnav = () => {
   return (
     <div >
       <Container>
-      <Tabs size="md" align="center" colorScheme='green' variant='solid-rounded'>
+      <Tabs size="md" align="end" colorScheme='green' variant='solid-rounded' isFitted  >
         <TabList>
+          <Tab>WALLET</Tab>
           <Tab>EXPLORER</Tab>
           <Tab>FAUCET</Tab>
           <Tab>MINER</Tab>
@@ -17,21 +18,22 @@ const Vernalnav = () => {
 
         <TabPanels>
           <TabPanel>
-          <SimpleGrid columns={1} spacing={300}>
             <Card />
-          </SimpleGrid>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <Card />
           </TabPanel>
           <TabPanel>
-            <p>three!</p>
+          <Card/>
           </TabPanel>
           <TabPanel>
-            <p>three!</p>
+         <Card/>
           </TabPanel>
           <TabPanel>
-            <p>three!</p>
+          <Card/>
+          </TabPanel>
+          <TabPanel>
+          <Card/>
           </TabPanel>
         </TabPanels>
       </Tabs>

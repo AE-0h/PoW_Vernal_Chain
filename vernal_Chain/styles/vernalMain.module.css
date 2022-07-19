@@ -35,8 +35,17 @@
 .background {
   height: 0rem;
   position: relative;
-  padding: 0px;
+  padding: 100px;
+  background-image: url("/images/vernal_4.jpeg");
+
+    height: 200%;
+    width: 100%;
+
+    background-position: center;
+    background-size: cover;
+
 }
+
 
 
 .noDecor {
