@@ -1,43 +1,41 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Container, SimpleGrid, Box } from '@chakra-ui/react';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import Card from "../components/vernal_cards";
 
 const Vernalnav = () => {
   return (
     <div >
-      <Container>
-      <Tabs size="md" align="end" colorScheme='green' variant='solid-rounded' isFitted  >
-        <TabList>
-          <Tab>WALLET</Tab>
-          <Tab>EXPLORER</Tab>
-          <Tab>FAUCET</Tab>
-          <Tab>MINER</Tab>
-          <Tab>NODE</Tab>
-          <Tab>VERNALCHAIN</Tab>
-          
-        </TabList>
+      <Breadcrumb w= '110%' spacing='10px' separator='🥚'>
+  <BreadcrumbItem>
+    <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
+  </BreadcrumbItem>
+    
+  <BreadcrumbItem>
+    <BreadcrumbLink href='#'>EXPLORER</BreadcrumbLink>
+  </BreadcrumbItem>
 
-        <TabPanels>
-          <TabPanel>
-            <Card />
-          </TabPanel>
-          <TabPanel>
-            <Card />
-          </TabPanel>
-          <TabPanel>
-          <Card/>
-          </TabPanel>
-          <TabPanel>
-         <Card/>
-          </TabPanel>
-          <TabPanel>
-          <Card/>
-          </TabPanel>
-          <TabPanel>
-          <Card/>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-      </Container>
+  <BreadcrumbItem>
+    <BreadcrumbLink href='#'>FAUCET</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem>
+    <BreadcrumbLink href='#'>MINER</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem>
+    <BreadcrumbLink href='#'>VERNAL_CHAIN</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem isCurrentPage>
+    <BreadcrumbLink href='#'>NODES</BreadcrumbLink>
+  </BreadcrumbItem>
+  
+</Breadcrumb>
     </div>
   );
 };
