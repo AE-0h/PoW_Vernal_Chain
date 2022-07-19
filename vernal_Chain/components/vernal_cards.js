@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Card = () => {
     return (
-      <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-       
+      <Box bg='tomato' w='100%' p={4} color='white' h= '500%' alignItems= 'center'>
+       WELCOME TO THE VERNAL CHAIN 🥚
       </Box>
     )
   }

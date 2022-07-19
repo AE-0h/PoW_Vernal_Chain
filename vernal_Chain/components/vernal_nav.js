@@ -1,7 +1,5 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Container } from '@chakra-ui/react';
-
-import styles from "/styles/vernalMain.module.css";
-
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Container, SimpleGrid } from '@chakra-ui/react';
+import Card from "../components/vernal_cards";
 
 const Vernalnav = () => {
   return (
@@ -19,7 +17,11 @@ const Vernalnav = () => {
 
         <TabPanels>
           <TabPanel>
-            <p>one!</p>
+          <SimpleGrid columns={1} spacing={20}>
+            <Card />
+            <Card />
+            <Card />
+          </SimpleGrid>
           </TabPanel>
           <TabPanel>
             <p>two!</p>
