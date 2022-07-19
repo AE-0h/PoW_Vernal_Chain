@@ -12,6 +12,16 @@
   font-size: .8em;
 }
 
+.vernalNav {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: rgb(252, 239, 215);
+  border-bottom: 1px solid rgb(252, 239, 215);
+}
+
 
 .github:after {
   content: "AE-0h";
@@ -23,19 +33,9 @@
 }
 
 .background {
-  /* background: rgb(2, 0, 36); */
-  background: linear-gradient(
-    280deg,
-    rgb(229, 255, 205) 0%,
-    rgb(39, 25, 12) 35%,
-    rgb(189, 237, 255) 100%
-  );
-  width: 100%;
-  height: 3rem;
+  height: 0rem;
   position: relative;
-  padding: 75px;
-  border-radius: .2cm .2cm .2cm .2cm;
-  box-shadow: 0em 0em .2cm .2cm rgba(0, 0, 0, 0.2);
+  padding: 0px;
 }
 
 
@@ -45,21 +45,16 @@
 
 .footer {
   position: fixed;
-  bottom: 4px;
+  bottom: 0px;
   width: 100%;
   left: 0;
-  /* background: rgb(2, 0, 36); */
-  background: linear-gradient(
-    220deg,
-    rgb(229, 255, 205) 0%,
-    rgb(84, 68, 54) 35%,
-    rgb(189, 237, 255) 100%
-  );
-  height: 4rem;
+  height: 5rem;
   color: white;
   text-align: center;
+  text-align-last: justify;
   padding: 1rem;
-  z-index: 2;
+  z-index: 1;
   border-radius: .2cm .2cm .2cm .2cm;
   box-shadow: 0em 0em .2cm .2cm rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
 }

@@ -1,48 +1,19 @@
 import styles from "/styles/vernalMain.module.css";
+import { Flex, Spacer, Box, Heading, ButtonGroup, Button } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      <a
-        href="https://github.com/AE-0h"
-        rel="noreferrer"
-        target="_blank"
-      >
-         <svg xmlns="http://www.w3.org/2000/svg" height="20%" width="10%">
-            <filter id="filter-wps374rdt">
-              <feTurbulence baseFrequency="0.42038" numOctaves="2" seed="10">
-                {" "}
-              </feTurbulence>{" "}
-              <feColorMatrix values="3.1 -6.5 -2.6 -9 -2.3 -5.1 -1 -2.1 1.3 1.8 0 0.8 6.9 -4.1 1.9 0.9 4.4 6.9 3.2 0">
-                {" "}
-              </feColorMatrix>{" "}
-            </filter>{" "}
-            <rect
-              width="10%"
-              height="10%"
-              fill="rgb(115,2,183)"
-              className="bgRect"
-            >
-              {" "}
-            </rect>{" "}
-            <rect width="100%" height="100%" filter="url(#filter-wps374rdt)">
-              {" "}
-            </rect>{" "}
-          </svg>{" "}
-      </a>
-      <p
-        className="fs-5 px-4 mt-3"
-        style={{
-          color: "#ffffff",
-        }}
-      >
-        <a
-          href="https://github.com/AE-0h"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.github}
-        ></a>
-      </p>
+      <Flex minWidth='max-content' alignItems='center' gap='2'>
+  <Box p='2'>
+    <Heading size='md'>VERNAL CHAIN 🥚 </Heading>
+  </Box>
+  <Spacer />
+  <ButtonGroup gap='2'>
+    <Button colorScheme='green'>Join the Egg Mass</Button>
+  </ButtonGroup>
+</Flex>
+    
     </div>
   );
 };
