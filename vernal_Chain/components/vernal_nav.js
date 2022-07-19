@@ -4,8 +4,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
-import Card from "../components/vernal_cards";
+
 
 const Vernalnav = () => {
   return (
