@@ -9,11 +9,8 @@ import { Flex, Spacer, Box, Heading, ButtonGroup, Button, Center, Container, Sim
 export default function Wallet() {
   return (
     <>
-    <div style={{ display: "flex", justifyContent: "center" }}
-      >
      <Vernalnav /> 
       <Footer />
-    </div>
     </>
   );
 }

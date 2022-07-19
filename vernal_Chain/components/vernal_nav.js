@@ -5,7 +5,7 @@ const Vernalnav = () => {
   return (
     <div >
       <Container>
-      <Tabs size="md" align="end" colorScheme='green' variant='solid-rounded'>
+      <Tabs size="md" align="center" colorScheme='green' variant='solid-rounded'>
         <TabList>
           <Tab>EXPLORER</Tab>
           <Tab>FAUCET</Tab>
@@ -17,9 +17,7 @@ const Vernalnav = () => {
 
         <TabPanels>
           <TabPanel>
-          <SimpleGrid columns={1} spacing={20}>
-            <Card />
-            <Card />
+          <SimpleGrid columns={1} spacing={300}>
             <Card />
           </SimpleGrid>
           </TabPanel>
