@@ -3,13 +3,18 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbSeparator,
+  Box, Heading,
 } from '@chakra-ui/react'
 
 
 const Vernalnav = () => {
   return (
+    
     <div >
-      <Breadcrumb w= '100%' spacing='10px' separator='🥚' align= 'center' >
+   
+       <Heading size='md'>🥚 VERNAL CHAIN </Heading>
+ 
+      <Breadcrumb w= '100%' spacing='10px' separator=' ' align= 'center' >
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>
