@@ -6,8 +6,8 @@ const Card = () => {
     const outerBoxStyles = {
         shadow: 'dark',
         borderRadius: '3xl',
-        border:'1px',
-        borderColor:'gray.800',
+        border:'0.5px',
+        borderColor:'#e6e6e6',
         boxSize: '800px',
         w: '500%',
         p: '30',
@@ -23,8 +23,8 @@ const Card = () => {
         textAlign: 'center',
         boxSize: 'full',
         shadow: '2xl',
-        color: 'D1CFD3',
-        textShadow: '0 0 20px black',
+        color: '#cff9e0',
+        textShadow: '0 0 4px black',
         fontWeight: 'bold',
         fontSize: '20px',
       }

@@ -1,4 +1,4 @@
-import Card from "../components/vernal_cards";
+import Card from "./vernal_cards";
 import styles from "/styles/vernalMain.module.css";
 import { Container, SimpleGrid, Box } from '@chakra-ui/react';
 
