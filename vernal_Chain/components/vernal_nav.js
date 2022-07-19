@@ -10,7 +10,7 @@ import Card from "../components/vernal_cards";
 const Vernalnav = () => {
   return (
     <div >
-      <Breadcrumb w= '110%' spacing='10px' separator='🥚'>
+      <Breadcrumb w= '100%' spacing='10px' separator='🥚' align= 'center' >
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>
@@ -26,11 +26,6 @@ const Vernalnav = () => {
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>MINER</BreadcrumbLink>
   </BreadcrumbItem>
-
-  <BreadcrumbItem>
-    <BreadcrumbLink href='#'>VERNAL_CHAIN</BreadcrumbLink>
-  </BreadcrumbItem>
-
   <BreadcrumbItem isCurrentPage>
     <BreadcrumbLink href='#'>NODES</BreadcrumbLink>
   </BreadcrumbItem>
