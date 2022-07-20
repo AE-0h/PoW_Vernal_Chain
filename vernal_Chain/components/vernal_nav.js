@@ -4,15 +4,16 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
   Box, Heading,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import styles from "../styles/vernalMain.module.css";
 
 
 const Vernalnav = () => {
   return (
     
-    <div >
+    <div className= {styles.vernalNav} >
    
-       <Heading size='md'>🥚 VERNAL CHAIN </Heading>
+       <Heading size='sm'>🥚    VERNAL CHAIN </Heading>
  
       <Breadcrumb w= '100%' spacing='10px' separator='' align= 'center' >
   <BreadcrumbItem>

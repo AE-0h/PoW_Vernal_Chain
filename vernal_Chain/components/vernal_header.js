@@ -1,5 +1,5 @@
 import Vernalnav from "./vernal_nav";
-import styles from "../styles/vernalMain.module.css";"";
+import styles from "../styles/vernalMain.module.css";
 
 
 const Header = () => {
