@@ -23,12 +23,14 @@
   position: relative;
   padding: 100px;
   background-image: url("/images/vernal_4.jpeg");
-
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 200%;
     width: 100%;
-
     background-position: center;
-    background-size: cover;
+ 
 
 }
 

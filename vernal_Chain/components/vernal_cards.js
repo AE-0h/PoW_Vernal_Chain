@@ -1,4 +1,4 @@
-import { Box, Badge, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 const Card = () => {
   const innerBoxStyles = {
