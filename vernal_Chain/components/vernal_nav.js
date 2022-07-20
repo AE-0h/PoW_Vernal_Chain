@@ -18,7 +18,6 @@ const Vernalnav = () => {
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>
-    
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>EXPLORER</BreadcrumbLink>
   </BreadcrumbItem>
