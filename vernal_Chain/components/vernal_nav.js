@@ -13,9 +13,9 @@ const Vernalnav = () => {
     
     <div className= {styles.vernalNav} >
    
-       <Heading size='sm'>🥚    VERNAL CHAIN </Heading>
+       <h1> 🥚    VERNAL CHAIN </h1>
  
-      <Breadcrumb w= '100%' spacing='10px' separator='' align= 'center' >
+      <Breadcrumb w= '100%' spacing='10px' separator='' align= 'end' paddingRight='4'>
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>

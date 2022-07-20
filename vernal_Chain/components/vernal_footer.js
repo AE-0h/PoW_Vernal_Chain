@@ -4,7 +4,7 @@ import { Flex, Spacer, Box, Heading, ButtonGroup, Button } from '@chakra-ui/reac
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      <Flex minWidth='max-content' alignItems='center' gap='2'>
+      <Flex minWidth='max-content' alignItems='center' gap='1'>
 
   <Spacer />
   <ButtonGroup gap='2'>
