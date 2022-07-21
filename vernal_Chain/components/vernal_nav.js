@@ -3,7 +3,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbSeparator,
-  Box, Heading,
+  Box, Heading, Image, Text
 } from '@chakra-ui/react';
 import styles from "../styles/vernalMain.module.css";
 
@@ -12,10 +12,12 @@ const Vernalnav = () => {
   return (
     
     <div className= {styles.vernalNav} >
-   
-       <h1> 🥚    VERNAL CHAIN </h1>
- 
-      <Breadcrumb w= '100%' spacing='10px' separator='' align= 'end' paddingRight='4'>
+
+      <Box textAlign='justify'>
+      <Image src="/images/egg.png" alt="Vernal Logo" width="50px" height="50px"/>
+      </Box>
+
+      <Breadcrumb w= '100%' spacing='30px' separator='' align= 'end' paddingRight='6'  paddingBottom='5'>
   <BreadcrumbItem>
     <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>

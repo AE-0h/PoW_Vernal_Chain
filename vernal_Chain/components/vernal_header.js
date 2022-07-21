@@ -5,7 +5,7 @@ import styles from "../styles/vernalMain.module.css";
 const Header = () => {
     return (
         <div className= {styles.vernalNav}>
-        <Vernalnav />
+        <Vernalnav /> 
         </div>
     );
 }

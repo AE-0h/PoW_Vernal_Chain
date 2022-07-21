@@ -4,19 +4,10 @@ import { Container, Flex } from '@chakra-ui/react';
 
 const Body = () => {
     return (
-        <Flex
-      flexWrap="wrap"
-      spacing="24px"
-      gap="16px"
-      justifyContent="space-evenly"
-    >
         <div className={styles.background}>
-            <Container>
-                <Card />
-            </Container>
-
+            <Card />
         </div>
-        </Flex>
+      
     );
 }
 export default Body;
