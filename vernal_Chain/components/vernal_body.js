@@ -1,4 +1,4 @@
-import Card from "./vernal_cards";
+import Card from "./vernal_cards/vernal_main";
 import styles from "/styles/vernalMain.module.css";
 import { Container, Flex } from '@chakra-ui/react';
 
