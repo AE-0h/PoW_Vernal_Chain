@@ -1,11 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";;
 import Footer from "../components/vernal_footer";
 import Body from "../components/vernal_body";
 import Header from "../components/vernal_header";
-import Vernalnav from "../components/vernal_nav";
-import { Flex, Spacer, Box, Heading, ButtonGroup, Button, Center, Container, SimpleGrid } from '@chakra-ui/react'
 
 export default function Wallet() {
   return (

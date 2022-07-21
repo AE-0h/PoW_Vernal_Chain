@@ -5,8 +5,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import styles from "/styles/globals.css";
 
-// 2. Extend the theme to include custom colors, fonts, etc
-
 const theme = extendTheme({ });
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
