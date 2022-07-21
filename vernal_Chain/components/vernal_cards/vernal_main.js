@@ -22,7 +22,7 @@ const Card = () => {
   };
   return (
  
-  <SimpleGrid columns={4} spacing={20}>
+  <SimpleGrid columns={1} spacing={20}>
 
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
         <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
@@ -30,9 +30,6 @@ const Card = () => {
           EXPLORER
         </Heading>
       </Flex>
-      <AspectRatio maxW='400px' ratio={4 / 3}>
-        <Image src='/images/eggMass.png' alt='eggmass' objectFit='cover' filter='grayscale(45%)' />
-      </AspectRatio>
       <VernalText/>
       </Box>
 
@@ -42,9 +39,6 @@ const Card = () => {
           FAUCET
         </Heading>
       </Flex>
-      <AspectRatio maxW='400px' ratio={4 / 3}>
-        <Image src='/images/eggMass.png' alt='eggmass' objectFit='cover' filter='grayscale(45%)' />
-      </AspectRatio>
       <VernalText/>
       </Box>
 
@@ -54,9 +48,7 @@ const Card = () => {
           MINER
         </Heading>
       </Flex>
-      <AspectRatio maxW='400px' ratio={4 / 3}>
-        <Image src='/images/eggMass.png' alt='eggmass' objectFit='cover' filter='grayscale(45%)' />
-      </AspectRatio>
+    
       <VernalText/>
       </Box>
 
@@ -66,9 +58,7 @@ const Card = () => {
           NODES
         </Heading>
       </Flex>
-      <AspectRatio maxW='400px' ratio={4 / 3}>
-        <Image src='/images/eggMass.png' alt='eggmass' objectFit='cover' filter='grayscale(45%)' />
-      </AspectRatio>
+      
       <VernalText/>
       </Box>
     
