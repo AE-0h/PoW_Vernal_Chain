@@ -1,5 +1,5 @@
 import {
-    Box, Heading, Image, Text
+   Image, Link
   } from '@chakra-ui/react';
   import styles from "../styles/vernalMain.module.css";
   
@@ -7,7 +7,9 @@ import {
   const Vernalico = () => {
     return (
       <>
+        <Link href="/" >
         <Image className={styles.vernalIcon} src="/images/egg.png" alt="Vernal Logo" />
+        </Link>
       </>
     );
   };

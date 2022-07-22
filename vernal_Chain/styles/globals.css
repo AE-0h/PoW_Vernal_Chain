@@ -1,6 +1,7 @@
 html,
 body {
-  background: url(https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Vernal_4.jpg?wid=1250) no-repeat center center fixed; 
+  background:#656565;
+  background-blend-mode: multiply,multiply; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
