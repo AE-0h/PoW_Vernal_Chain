@@ -14,26 +14,29 @@ const Vernalnav = () => {
     <div className= {styles.vernalNav} >
 
       <Box textAlign='justify'>
-      <Image src="/images/egg.png" alt="Vernal Logo" width="50px" height="50px"/>
+      <Image className={styles.vernalIcon} src="/images/egg.png" alt="Vernal Logo" />
       </Box>
 
-      <Breadcrumb w= '100%' spacing='30px' separator='' align= 'end' paddingRight='6'  paddingBottom='5'>
+      <Breadcrumb  spacing='30px' separator=' '  fontSize='2xl' align= 'end' paddingRight='20'  >
+  <BreadcrumbItem >
+    <BreadcrumbLink href='/'>HOME</BreadcrumbLink>
+  </BreadcrumbItem>      
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>WALLET</BreadcrumbLink>
+    <BreadcrumbLink href='/wallet'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>EXPLORER</BreadcrumbLink>
+    <BreadcrumbLink href='/explorer'>EXPLORER</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>FAUCET</BreadcrumbLink>
+    <BreadcrumbLink href='/faucet'>FAUCET</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>MINER</BreadcrumbLink>
+    <BreadcrumbLink href='/miner'>MINER</BreadcrumbLink>
   </BreadcrumbItem>
-  <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href='#'>NODES</BreadcrumbLink>
+  <BreadcrumbItem >
+    <BreadcrumbLink href='/nodes'>NODES</BreadcrumbLink>
   </BreadcrumbItem>
   
 </Breadcrumb>

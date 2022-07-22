@@ -1,5 +1,5 @@
 import styles from "/styles/vernalMain.module.css";
-import { Flex, Spacer, Box, Heading, ButtonGroup, Button } from '@chakra-ui/react'
+import { Flex, Spacer, Box, Heading, ButtonGroup, Button, Link } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
 
   <Spacer />
   <ButtonGroup gap='2'>
-    <Button colorScheme='green'>Join the Egg Mass</Button>
+    <Button as={Link} colorScheme='green' href='/wallet' >Join the Egg Mass</Button>
   </ButtonGroup>
 </Flex>
     

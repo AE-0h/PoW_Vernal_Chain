@@ -4,7 +4,7 @@ const VernalText = () => {
 return (
     <>
 <Stack spacing={3}>
-  <Text fontSize='md'>(md) In love with React & Next</Text>
+  <Text fontSize='md'>s</Text>
 </Stack>
     </>
   )
