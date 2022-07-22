@@ -4,7 +4,7 @@ import { Divider, AspectRatio } from '@chakra-ui/react'
 import styles from "/styles/vernalMain.module.css";
 
 
-const Card = () => {
+const Node_Card = () => {
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "left",
@@ -22,13 +22,16 @@ const Card = () => {
 
   
   return (
+    <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
         <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
+          <h1 className={styles.miniHeadText}>NODES</h1>
         <Heading as='h1' size='xl' fontWeight='thin' color='#cff9e0' paddingLeft={2}>
         </Heading>
       </Flex>
       </Box>
+      </div>
   );
 };
 
-export default Card;
+export default Node_Card;

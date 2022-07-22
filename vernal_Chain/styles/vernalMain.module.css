@@ -29,6 +29,13 @@
 
 }
 
+.miniHeadText {
+  padding-left: .5cm;
+  font-size: 1.9rem;
+  color:rgb(207, 249, 224); 
+  text-shadow: 2px 1px 1px rgb(71, 70, 70);
+}
+
 .vernalIcon{
 padding-top: 1cm;
 padding-left: 1cm;
