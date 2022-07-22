@@ -10,14 +10,9 @@ import styles from "../styles/vernalMain.module.css";
 
 const Vernalnav = () => {
   return (
-    
-    <div className= {styles.vernalNav} >
-
-      <Box textAlign='justify'>
-      <Image className={styles.vernalIcon} src="/images/egg.png" alt="Vernal Logo" />
-      </Box>
-
-      <Breadcrumb  spacing='30px' separator=' '  fontSize='2xl' align= 'end' paddingRight='20'  >
+    <>
+    <div className= {styles.vernalNav}>
+      <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >
   <BreadcrumbItem >
     <BreadcrumbLink href='/'>HOME</BreadcrumbLink>
   </BreadcrumbItem>      
@@ -41,6 +36,7 @@ const Vernalnav = () => {
   
 </Breadcrumb>
     </div>
+    </>
   );
 };
 

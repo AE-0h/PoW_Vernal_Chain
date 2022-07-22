@@ -3,25 +3,32 @@
   max-width: 800px;
 }
 
+.header{
+  border-radius: .0 .0 .1cm .1cm;
+  box-shadow: 0em 0em .2cm .2cm rgba(0, 0, 0, 0.2);
+  background:linear-gradient(to right, #383838  0%,#212121  100%);
+  height: 4.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .vernalNav {
-  padding-left: 1cm;
-  background:linear-gradient(to right,  #212121 0%, #383838 100%);
-  height: 8rem;
+
   color:rgb(207, 249, 224); 
   text-shadow: 2px 1px 1px rgb(71, 70, 70);
-  border-radius: .0cm .0cm 0cm 0cm;
-  box-shadow: 5px 3px 3px rgb(0, 0, 0);
   font-size: 1rem;
   font-family: 'open sans', sans-serif;
+  padding-top: 5.9ch;
+ 
 
 }
 
 .miniHead {
   padding: .5 10px;
-  background:linear-gradient(to right,  #212121 0%, #383838 100%);
+  background:linear-gradient(to right, #383838  0%,#212121  100%);
   height: 2.5rem;
   color:rgb(207, 249, 224); 
-  text-shadow: 2px 1px 1px rgb(71, 70, 70);
+  text-shadow: 2px 1px 1px rgb(83, 81, 81);
   border-radius: .5cm .5cm 0cm 0cm;
   box-shadow: .5px .5px 2px rgb(0, 0, 0);
   font-size: 1rem;
@@ -37,12 +44,12 @@
 }
 
 .vernalIcon{
-padding-top: 1cm;
-padding-left: 1cm;
-width: 100px;
-height: 100px;
-
-
+width: 70px;
+height: 80px;
+padding-left: 0.2cm;
+padding-right: 0.2cm;
+padding-top: .6cm;
+padding-bottom: .2cm;
 }
 
 
@@ -83,5 +90,7 @@ height: 100px;
   box-shadow: 0em 0em .2cm .2cm rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   background:linear-gradient(to right, #383838  0%,#212121  100%);
-  text-shadow: 1px 1px 1px rgb(39, 54, 48);
+  text-shadow: 0px 0px 0px rgb(39, 54, 48);
+  color:rgb(207, 249, 224); 
+
 }
