@@ -12,10 +12,7 @@ const Vernalnav = () => {
   return (
     <>
     <div className= {styles.vernalNav}>
-      <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >
-  <BreadcrumbItem >
-    <BreadcrumbLink href='/'>HOME</BreadcrumbLink>
-  </BreadcrumbItem>      
+      <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >   
   <BreadcrumbItem>
     <BreadcrumbLink href='/wallet'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>
