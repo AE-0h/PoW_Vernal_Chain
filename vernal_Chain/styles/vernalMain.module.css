@@ -39,8 +39,8 @@
 
 .miniHeadText {
   padding-left: .5cm;
-  font-size: 1.9rem;
-  color:rgb(207, 249, 224); 
+  font-size : 1.9rem;
+  color:rgb(207, 249, 224);
   text-shadow: 2px 1px 1px rgb(71, 70, 70);
 }
 
@@ -53,6 +53,26 @@ padding-top: .6cm;
 padding-bottom: .2cm;
 }
 
+.homeImage{
+  border-radius: .5cm .5cm .5cm .5cm;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0);
+  height: 30rem;
+  display: flex;
+  margin-top: 10rem;
+  margin-right: 2rem;
+  
+}
+
+.homeButton{
+  border-radius: .5cm .5cm .5cm .5cm;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0);
+  display: flex;
+  margin-top: 38rem;
+  margin-left: 12rem
+  
+
+}
+
 
 
 .background {
@@ -62,7 +82,7 @@ padding-bottom: .2cm;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  height: 0rem;
+  height: 10rem;
   position: relative;
   padding: 100px;
     height: 200%;

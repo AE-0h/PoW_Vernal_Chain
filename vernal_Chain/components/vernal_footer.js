@@ -8,7 +8,7 @@ const Footer = () => {
 
   <Spacer />
   <ButtonGroup gap='2'>
-    <Button as={Link} colorScheme='green' href='/wallet' >Join the Egg Mass</Button>
+    <Button as={Link} colorScheme='gray' href='/wallet' color='rgb(207, 249, 224)' >Join the Egg Mass</Button>
   </ButtonGroup>
 </Flex>
     
