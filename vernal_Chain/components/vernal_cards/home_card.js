@@ -1,7 +1,16 @@
-import { Box, Flex, Image, Heading, Button, Spacer, Link, Text, Container, Divider } from "@chakra-ui/react";
-import { SimpleGrid } from '@chakra-ui/react';
-import styles from "/styles/vernalMain.module.css";
+import {
+  Box,
+  Flex,
+  Heading,
+  Button,
+  Spacer,
+  Link,
+  Container,
+  Divider,
+  AspectRatio,
+} from "@chakra-ui/react";
 
+import styles from "/styles/vernalMain.module.css";
 
 const Home_Card = () => {
   const innerBoxStyles = {
@@ -19,25 +28,63 @@ const Home_Card = () => {
     w: "100%",
   };
 
-  
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="4px">
-        <Flex justifyContent='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
+        <Flex
+          justifyContent="start"
+          bg="linear-gradient(to right,  #212121 0%, #383838 100%) "
+          className={styles.miniHead}
+        >
           <h1 className={styles.miniHeadText}>WELCOME</h1>
-          </Flex>
-        <Heading as='h1' size='4xl' fontWeight='extrabold' color='#cff9e0'  paddingTop={50}  fontFamily='sans-serif' textShadow='' textAlign='center' justifyContent='center' text-shadow= '2px 1px 1px rgb(71, 70, 70)'>
-          Welcome to VernalChain 
-         <Spacer />
-         <Divider orientation='horizontal' colorScheme='facebook' size='xl' variant="solid" />
-         <Container maxWidth='xl' fontSize='3xl' as='span' textAlign='center' justifyContent='center' color='white'>A proof of concept educational tool to help visualize a blockchain implementing a Proof of Work consensus.
-          Click the button below to create a wallet instance and begin exploring the blockchain.
-        </Container>
+        </Flex>
+        <Heading
+          as="h1"
+          size="4xl"
+          fontWeight="extrabold"
+          color="cornsilk"
+          paddingTop={50}
+          fontFamily="sans-serif"
+          textAlign="center"
+          justifyContent="center"
+          className={styles.homeHeadText}
+        >
+          Welcome to VernalChain
+          <Spacer />
+          <Divider
+            orientation="horizontal"
+            colorScheme="facebook"
+            variant="solid"
+            borderColor="cornsilk"
+          />
+          <Container
+            maxWidth="xl"
+            fontSize="3xl"
+            as="span"
+            textAlign="center"
+            justifyContent="center"
+            color="white"
+            marginLeft="-1.5"
+            marginRight="-1.5"
+          >
+            A proof of concept educational tool to help visualize a blockchain
+            implementing a Proof of Work consensus. Click the button below to
+            create a wallet instance and begin exploring the blockchain.
+          </Container>
         </Heading>
-        
-        <Button size='lg' colorScheme='green' mt='24px'>
-        Join the Egg Mass
-        </Button>
+        <Link href="/wallet">
+          <Button
+            size="lg"
+            colorScheme="white"
+            mt="24px"
+            className={styles.homeButton}
+            color="DarkSlateGrey"
+          >
+            Join the Egg Mass
+          </Button>
+        </Link>
+      
+
       </Box>
     </div>
   );

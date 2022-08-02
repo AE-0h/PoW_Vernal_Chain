@@ -37,12 +37,32 @@
 
 }
 
+.miniFoot {
+  background:linear-gradient(to right, #383838  0%,#212121  100%) fixed;
+  height: 4.8rem;
+  color:rgb(207, 249, 224); 
+  text-shadow: 2px 1px 1px rgb(83, 81, 81);
+  border-radius: .0cm .0cm .5cm .5cm;
+  box-shadow: 2px .6px 1.6px rgb(0, 0, 0);
+  font-size: 1rem;
+  font-family: 'open sans', sans-serif;
+  margin-top: 1.5cm;
+  display: flex;
+
+}
+
 .miniHeadText {
   padding-left: .5cm;
   font-size : 1.9rem;
   color:rgb(207, 249, 224);
-  text-shadow: 2px 1px 1px rgb(71, 70, 70);
+  text-shadow: 2px 1px 1px rgb(98, 94, 73);
 }
+
+.homeHeadText {
+
+  text-shadow: 2px 1px 1px rgb(160, 159, 155);
+}
+
 
 .vernalIcon{
 width: 70px;
@@ -56,12 +76,8 @@ padding-bottom: .2cm;
 
 .homeButton{
   border-radius: .5cm .5cm .5cm .5cm;
-  box-shadow: 3px 3px 5px rgb(0, 0, 0);
+  box-shadow: 2px 3px 3px rgb(160, 159, 155);
   display: flex;
-  margin-top: 38rem;
-  margin-left: 12rem
-  
-
 }
 
 .background {
@@ -102,4 +118,10 @@ padding-bottom: .2cm;
   text-shadow: 0px 0px 0px rgb(39, 54, 48);
   color:rgb(207, 249, 224); 
 
+}
+
+#wrapper{
+  margin-left:auto;
+    margin-right:auto;
+    width:960px;
 }
