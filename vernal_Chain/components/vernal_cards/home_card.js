@@ -1,6 +1,5 @@
-import { Box, Flex, Image, Heading, Button, Spacer, Link } from "@chakra-ui/react";
-import { SimpleGrid } from '@chakra-ui/react'
-import { Divider, AspectRatio } from '@chakra-ui/react'
+import { Box, Flex, Image, Heading, Button, Spacer, Link, Text, Container, Divider } from "@chakra-ui/react";
+import { SimpleGrid } from '@chakra-ui/react';
 import styles from "/styles/vernalMain.module.css";
 
 
@@ -9,7 +8,7 @@ const Home_Card = () => {
     borderRadius: "3xl",
     alignItems: "left",
     justifyContent: "center",
-    textAlign: "left",
+    textAlign: "center",
     color: "#cff9e0",
     textShadow: "0 1 4px black",
     fontSize: "20px",
@@ -23,24 +22,24 @@ const Home_Card = () => {
   
   return (
     <div className={styles.background}>
-      <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-        <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
+      <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="4px">
+        <Flex justifyContent='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
           <h1 className={styles.miniHeadText}>WELCOME</h1>
-        <Heading as='h1' size='4xl' fontWeight='extrabold' color='#cff9e0'  paddingTop={200}  fontFamily='sans-serif' textShadow='inherit'>
+          </Flex>
+        <Heading as='h1' size='4xl' fontWeight='extrabold' color='#cff9e0'  paddingTop={50}  fontFamily='sans-serif' textShadow='' textAlign='center' justifyContent='center' text-shadow= '2px 1px 1px rgb(71, 70, 70)'>
           Welcome to VernalChain 
+         <Spacer />
+         <Divider orientation='horizontal' colorScheme='facebook' size='xl' variant="solid" />
+         <Container maxWidth='xl' fontSize='3xl' as='span' textAlign='center' justifyContent='center' color='white'>A proof of concept educational tool to help visualize a blockchain implementing a Proof of Work consensus.
+          Click the button below to create a wallet instance and begin exploring the blockchain.
+        </Container>
         </Heading>
-        <Spacer />
-        <Image src="../images/eggMass.png" fit='scale-down'  className={styles.homeImage}>
-        </Image>
-  
-      </Flex>
-      <Link href="/wallet" >
-      <Button colorScheme='blackAlpha'  className={styles.homeButton}>
+        
+        <Button size='lg' colorScheme='green' mt='24px'>
         Join the Egg Mass
-      </Button>
-      </Link>
+        </Button>
       </Box>
-      </div>
+    </div>
   );
 };
 

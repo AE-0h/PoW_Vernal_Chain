@@ -1,9 +1,7 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-  Box, Heading, Image, Text
+  BreadcrumbLink
 } from '@chakra-ui/react';
 import styles from "../styles/vernalMain.module.css";
 

@@ -1,6 +1,6 @@
 html,
 body {
-  background:#656565;
+  background: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
   background-blend-mode: multiply,multiply; 
     -webkit-background-size: cover;
     -moz-background-size: cover;

@@ -53,15 +53,6 @@ padding-top: .6cm;
 padding-bottom: .2cm;
 }
 
-.homeImage{
-  border-radius: .5cm .5cm .5cm .5cm;
-  box-shadow: 3px 3px 5px rgb(0, 0, 0);
-  height: 30rem;
-  display: flex;
-  margin-top: 10rem;
-  margin-right: 2rem;
-  
-}
 
 .homeButton{
   border-radius: .5cm .5cm .5cm .5cm;
@@ -73,10 +64,8 @@ padding-bottom: .2cm;
 
 }
 
-
-
 .background {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
   background-blend-mode: multiply,multiply; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -91,8 +80,6 @@ padding-bottom: .2cm;
  
 
 }
-
-
 
 .noDecor {
   text-decoration: none;
