@@ -36,7 +36,7 @@ const Home_Card = () => {
           bg="linear-gradient(to right,  #212121 0%, #383838 100%) "
           className={styles.miniHead}
         >
-          <h1 className={styles.miniHeadText}>WELCOME</h1>
+          
         </Flex>
         <Heading
           as="h1"
@@ -51,12 +51,7 @@ const Home_Card = () => {
         >
           Welcome to VernalChain
           <Spacer />
-          <Divider
-            orientation="horizontal"
-            colorScheme="facebook"
-            variant="solid"
-            borderColor="cornsilk"
-          />
+      
           <Container
             maxWidth="xl"
             fontSize="3xl"
