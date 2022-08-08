@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "eggMass": " npm run vernalNode.js",
-    "nodenetwork": "concurrently  \"npm run client\" \"npm run vernal_chain\" \"npm run egg_1\" \"npm run egg_2\" \"npm run egg_3\" \"npm run egg_4\"",
+    "nodenetwork": "concurrently \"npm run vernal_chain\" \"npm run client\" \"npm run egg_1\" \"npm run egg_2\" \"npm run egg_3\" \"npm run egg_4\"",
     "vernal_chain": "nodemon --watch dev -e js vernal_backend/vernalChain/_vernalChain.js 3002 http://localhost:3002",
     "client": "npm run dev",
     "egg_1": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3003 http://localhost:3003",
@@ -22,16 +22,13 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "concurrently": "^7.3.0",
+    "elliptic": "^6.5.4",
     "framer-motion": "^6.5.1",
+    "jshashes": "^1.0.8",
     "next": "12.2.2",
-    "next-redux-wrapper": "^7.0.5",
     "nodemon": "^2.0.19",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^8.0.2",
-    "redux": "^4.2.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "8.19.0",
