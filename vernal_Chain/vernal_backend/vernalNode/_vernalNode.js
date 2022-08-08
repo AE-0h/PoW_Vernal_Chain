@@ -1,6 +1,5 @@
 const express = require("express");
 const Blockchain = require("../vernalChain/_vernalChain");
-const uuid = require("uuid/v1");
 const port = process.argv[2];
 const rp = require("request-promise");
 const cors = require("cors");

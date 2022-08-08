@@ -5,13 +5,6 @@ const Block = require('./block');
 const ValidationUtils = require('../encryption-Utils/Validation-tools');
 const config = require('../encryption-Utils/Config');
 
-/**
- * @notice - Creates a new blockchain
- * @property {array} chain - The blockchain to be created
- * @property {array} pendingTransactions - The pending transactions to be added to the blockchain
- * @property {string} difficulty - The difficulty of the blockchain proof of work algorithm.
- * @function addBlock - Adds a genesis block to the blockchain.
- */
 class Blockchain {
     constructor() {
         this.chain = [config.genesisBlock];
@@ -25,8 +18,8 @@ class Blockchain {
 
     /**
      * @notice - Calculates the total mining difficulty of the chain
-     * @return - A number representing the total mining difficulty of the chain.
      */
+    
     calcCumulativeDifficulty() {
         let difficulty = 0;
         for (let block of this.chain) {

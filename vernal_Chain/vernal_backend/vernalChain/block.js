@@ -35,7 +35,7 @@ module.exports = class Block {
 
   calculateBlockDataHash() {
     let blockData = {
-      index: this.index,
+      index: 0,
       transactions: this.transactions.map((trans) =>
         Object({
           from: trans.from,
