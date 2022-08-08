@@ -1,7 +1,7 @@
 const express = require("express");
 const Blockchain = require("../vernalChain/_vernalChain");
 const uuid = require("uuid/v1");
-const port = 3001;
+const port = process.argv[2];
 const rp = require("request-promise");
 const cors = require("cors");
 const { StatusCodes } = require("http-status-codes");
@@ -33,8 +33,7 @@ app.get("/info", (req, res) => {
 });
 
 /**
- * @notice - Displays all addresses in the node
- * @param address - Array of addresses
+ *  Displays all addresses in the node
  */
 app.get("/addresses", (req, res) => {
     let allAddresses = vernalChain.getAllAddresses();
@@ -157,22 +156,15 @@ app.post("/receive-new-block", function(req, res) {
     }
 });
 
-/**  ========================= Register Nodes =========================
- * Step 1) A new node will call the /register-and-broadcast-node endpoint of an existing node.
- * That node will be registered within the current node then "broadcasted" to all other nodes.
- * Step 2) The existing node will initate the broadcast by calling /register-node of all nodes in the network.
- * Step 3) Once broadcast is complete, the exisiting node will call the /register-nodes-bulk endpoint on the new node.
- * This will give the new node an updated list of all nodes in the network.
- */
+/*  =========================  Nodes ========================= */
+
 app.post("/register-and-broadcast-node", function(req, res) {
     const newNodeUrl = req.body.newNodeUrl;
 
-    // Step 1)
     if (vernalChain.networkNodes.indexOf(newNodeUrl) == -1) {
         vernalChain.networkNodes.push(newNodeUrl);
     }
 
-    // Step 2)
     const regNodesPromises = [];
     vernalChain.networkNodes.forEach((networkNodesUrl) => {
         const requestOptions = {
@@ -185,7 +177,6 @@ app.post("/register-and-broadcast-node", function(req, res) {
         regNodesPromises.push(rp(requestOptions));
     });
 
-    // Step 3)
     Promise.all(regNodesPromises)
         .then((data) => {
             const bulkRegisterOptions = {

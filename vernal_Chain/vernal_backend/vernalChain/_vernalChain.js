@@ -1,5 +1,5 @@
 const sha256 = require('sha256');
-const currentNodeUrl = 3001;
+const currentNodeUrl = process.argv[3];
 const Transaction = require('./transaction');
 const Block = require('./block');
 const ValidationUtils = require('../encryption-Utils/Validation-tools');

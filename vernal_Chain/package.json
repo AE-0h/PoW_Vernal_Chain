@@ -1,12 +1,22 @@
 {
-  "name": "vernal_frontend",
+  "name": "vernal_chain",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "springBoot": " yarn  --cwd ../vernal_backend install",
+    "vernal_chain": " yarn --cwd ./ install ",
+    "network": " npm run vernalNode.js",
+    "nodenetwork": "concurrently \"npm run _vernalChain\" \"npm run client\" \"npm run node_2\" \"npm run node_3\" \"npm run node_4\" \"npm run node_5\"",
+    "blockchain": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3001 http://localhost:3001",
+    "client": "npm run dev",
+    "node_2": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3002 http://localhost:3002",
+    "node_3": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3003 http://localhost:3003",
+    "node_4": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3004 http://localhost:3004",
+    "node_5": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3005 http://localhost:3005"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.4",
@@ -16,6 +26,7 @@
     "framer-motion": "^6.5.1",
     "next": "12.2.2",
     "next-redux-wrapper": "^7.0.5",
+    "nodemon": "^2.0.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
