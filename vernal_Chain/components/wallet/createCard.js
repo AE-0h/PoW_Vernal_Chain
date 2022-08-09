@@ -1,15 +1,15 @@
-import { Box, Flex, Image, Heading, Spacer, Container } from "@chakra-ui/react";
+import { Box, Flex, Image, Heading, Spacer, Container, Button } from "@chakra-ui/react";
 import { SimpleGrid } from '@chakra-ui/react'
 import { Divider, AspectRatio } from '@chakra-ui/react'
 import styles from "/styles/vernalMain.module.css";
 
 
-const Wallet_Card = () => {
+const Create_Card = () => {
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "left",
     justifyContent: "center",
-    textAlign: "left",
+    textAlign: "center",
     color: "#cff9e0",
     textShadow: "0 1 4px black",
     fontSize: "20px",
@@ -40,7 +40,7 @@ const Wallet_Card = () => {
           justifyContent="center"
           className={styles.homeHeadText}
         >
-          Create a wallet
+          VERNAL WALLET
           <Spacer />
       
           <Container
@@ -51,16 +51,32 @@ const Wallet_Card = () => {
             justifyContent="center"
             color="white"
             marginLeft="-1.5"
-            marginRight="-1.5"
+       tton     marginRight="-1.5"
           >
-            A proof of concept educational tool to help visualize a blockchain
-            implementing a Proof of Work consensus. Click the button below to
-            create a wallet instance and begin exploring the blockchain.
+            A simple wallet solution for VernalChain protocol.
           </Container>
         </Heading>
+      <Button
+          size='4xl'
+          height='200px'
+          width='500px'
+          border='1px'
+          borderColor='#C3CDDA'
+          borderRadius='18px'
+          fontSize='50px'
+          fontWeight='extrabold'
+          color='cornsilk'
+          textShadow='0 1 6px gray'
+          textAlign='center'
+          justifyContent='center'
+          marginTop={50}
+        >
+          Create Wallet
+      </Button>
+        
       </Box>
       </div>
   );
 };
 
-export default Wallet_Card;
+export default Create_Card;

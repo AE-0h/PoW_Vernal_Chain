@@ -10,15 +10,15 @@ import {
     return (
       <>
       <div className= {styles.vernalNav}>
-        <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >   
-    <BreadcrumbItem>
-      <BreadcrumbLink href='/wallet'>CREATE</BreadcrumbLink>
+    <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >   
+      <BreadcrumbItem>
+    <BreadcrumbLink href='/wallet'>CREATE</BreadcrumbLink>
     </BreadcrumbItem>
     <BreadcrumbItem>
-      <BreadcrumbLink href='/explorer'>OPEN</BreadcrumbLink>
+      <BreadcrumbLink href='/wallet/balance'>BALANCE</BreadcrumbLink>
     </BreadcrumbItem>
     <BreadcrumbItem>
-      <BreadcrumbLink href='/explorer'>SEND</BreadcrumbLink>
+      <BreadcrumbLink href='/wallet/send'>SEND</BreadcrumbLink>
     </BreadcrumbItem>
   </Breadcrumb>
       </div>

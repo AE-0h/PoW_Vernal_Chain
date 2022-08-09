@@ -1,5 +1,5 @@
 import Footer from "../../components/vernal_footer";
-import Create_Card  from "../../components/wallet/createCard";
+import Send_Card  from "../../components/wallet/sendCard";
 import WalletHeader from "../../components/wallet/walletHeader";
 
 export default function Wallet() {
@@ -8,7 +8,7 @@ export default function Wallet() {
       <div
         >
           <WalletHeader/>
-          <Create_Card />
+          <Send_Card />
         <Footer />
         </div>
       </>
