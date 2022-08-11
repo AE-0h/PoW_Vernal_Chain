@@ -27,7 +27,6 @@ const Balance_Card = () => {
   };
   const formik = useFormik({
     initialValues: {
-      email: '',
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -67,7 +66,7 @@ const Balance_Card = () => {
             marginLeft="-1.5"
             marginRight="-1.5"
           >
-             <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit}>
       <label as="h1"
          size="xl"
          fontWeight="extrabold"
@@ -78,11 +77,11 @@ const Balance_Card = () => {
          justifyContent="center"
          className={styles.homeHeadText} >Wallet Address</label>
       <Input
-        id='email'
-        name='email'
-        type='email'
+        id='walletaddress'
+        name='walletaddress'
+        type='text'
         onChange={formik.handleChange}
-        value={formik.values.email}
+        value={formik.values.walletAddress}
       />
 
       <Button type='submit'>Submit</Button>
