@@ -30,15 +30,10 @@ const Create_Card = () => {
       console.log(getKeysFromSession);
    
     // display result
-    textAreaRef.current.value =
-      "Private key: " +
-      getKeysFromSession().privKey +
-      "\n" +
-      "Public key: " +
-      getKeysFromSession().pubKey +
-      "\n" +
-      "Wallet address: " +
-      '0x'+ getKeysFromSession().address;
+textAreaRef.current.value =
+  `Private key: ${getKeysFromSession().privKey}
+Public key: ${getKeysFromSession().pubKey}
+Wallet address: 0x${getKeysFromSession().address}`;
 
     // setIsCreated(true);
     // setWalletStatus("unlocked");
@@ -101,8 +96,13 @@ const Create_Card = () => {
         >
           Create Wallet
       </Button>
-      <Textarea ref={textAreaRef}>
+      <Textarea ref={textAreaRef} justifyContent='center' textAlign='center'>
       </Textarea>
+
+      <Flex  backdropFilter="auto" backdropBlur="15px" justifyContent='center'>
+        <Heading as='h1' size='xl' fontWeight='thin' color='cornsilk' paddingLeft={2}>   Please copy and save your keys and wallet address.
+        </Heading>
+        </Flex>
       </Box>
      
       </div>
