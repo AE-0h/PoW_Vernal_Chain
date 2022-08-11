@@ -1,8 +1,11 @@
-import { Box, Flex, Image, Heading, Spacer, Container, Button } from "@chakra-ui/react";
-import { SimpleGrid } from '@chakra-ui/react'
-import { Divider, AspectRatio } from '@chakra-ui/react'
+import { Box, Flex, Heading, Spacer, Container, Button, Textarea } from "@chakra-ui/react";
 import styles from "/styles/vernalMain.module.css";
+import elliptic from "elliptic"; 
+import { saveKeysInSession } from "../../encryption/sessions.js";
+import { getKeysFromSession } from "../../encryption/sessions.js";
+import {useRef, useEffect} from "react";
 
+const secp256k1 = new elliptic.ec("secp256k1");
 
 const Create_Card = () => {
   const innerBoxStyles = {
@@ -10,7 +13,7 @@ const Create_Card = () => {
     alignItems: "left",
     justifyContent: "center",
     textAlign: "center",
-    color: "#cff9e0",
+    color: 'cornsilk',
     textShadow: "0 1 4px black",
     fontSize: "20px",
     shadow: "0px 5px 10px rgba(4, 4, 4, 4)",
@@ -19,13 +22,35 @@ const Create_Card = () => {
     boxSize: "800px",
     w: "100%",
   };
+  let textAreaRef = useRef(null);
+  const handleClick = () => {
+    //create keypair with eliptic curve
+    let keyPair = secp256k1.genKeyPair();
+     saveKeysInSession(keyPair);
+      console.log(getKeysFromSession);
+   
+    // display result
+    textAreaRef.current.value =
+      "Private key: " +
+      getKeysFromSession().privKey +
+      "\n" +
+      "Public key: " +
+      getKeysFromSession().pubKey +
+      "\n" +
+      "Wallet address: " +
+      '0x'+ getKeysFromSession().address;
+
+    // setIsCreated(true);
+    // setWalletStatus("unlocked");
+    // setWalletAddress(sessionStorage["address"]);
+
+  };
 
   
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
         <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
-          <h1 className={styles.miniHeadText}></h1>
         <Heading as='h1' size='xl' fontWeight='thin' color='#cff9e0' paddingLeft={2}>
         </Heading>
         </Flex>
@@ -51,10 +76,11 @@ const Create_Card = () => {
             justifyContent="center"
             color="white"
             marginLeft="-1.5"
-       tton     marginRight="-1.5"
+            marginRight="-1.5"
           >
             A simple wallet solution for VernalChain protocol.
           </Container>
+       
         </Heading>
       <Button
           size='4xl'
@@ -70,13 +96,18 @@ const Create_Card = () => {
           textAlign='center'
           justifyContent='center'
           marginTop={50}
+          onClick={handleClick}
+          marginBottom={50}
         >
           Create Wallet
       </Button>
-        
+      <Textarea ref={textAreaRef}>
+      </Textarea>
       </Box>
+     
       </div>
-  );
-};
+    );
+  };
+  
 
 export default Create_Card;

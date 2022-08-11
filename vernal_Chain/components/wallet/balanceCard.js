@@ -7,6 +7,7 @@ import { Box, Flex, Image, Heading, Spacer, Container , Stat,
 import styles from "/styles/vernalMain.module.css";
 import { useFormik } from "formik";
 import { Input, Button } from "@chakra-ui/react";
+import {useState} from 'react';
 
 
 const Balance_Card = () => {
