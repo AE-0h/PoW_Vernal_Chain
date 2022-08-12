@@ -88,6 +88,7 @@ Wallet address: 0x${getKeysFromSession().address}`;
             justifyContent="center"
             marginTop={70}
             onClick={handleClick}
+            className={styles.homeButton}
           >
             Create Wallet{" "}
           </Button>{" "}

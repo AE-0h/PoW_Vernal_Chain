@@ -51,7 +51,7 @@ import {
             Send VernalChain Token
             </Heading>
             <Spacer />
-          <Flex justifyContent='center' alignItems='center' textAlign='center' marginTop={5}>
+          <Flex justifyContent='center' alignItems='center' textAlign='center' marginTop={5} fontWeight='thin'>
           <form 
               fontSize="3xl"
               as="span"
@@ -83,7 +83,7 @@ import {
         />
          <label as="h1"
            size="xl"
-           fontWeight="extrabold"
+           fontWeight="thin"
            color="cornsilk"
            marginTop={5}
            textAlign="center"
@@ -102,7 +102,24 @@ import {
 
         />
   
-        <Button type='submit' marginTop={5}>Submit</Button>
+        <Button type="submit"
+              size="4xl"
+              height="100px"
+              width="800px"
+              border="1px"
+              borderColor="#C3CDDA"
+              borderRadius="18px"
+              fontSize="50px"
+              fontWeight="thin"
+              color="cornsilk"
+              textShadow="0 1 6px gray"
+              textAlign="center"
+              justifyContent="center"
+              marginTop={5}
+              className={styles.homeButton}
+              >Send
+
+              </Button>
       </form>
       </Flex>
       <Spacer />

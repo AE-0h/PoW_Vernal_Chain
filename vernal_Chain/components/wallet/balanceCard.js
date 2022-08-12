@@ -112,6 +112,7 @@ const Balance_Card = () => {
               textShadow="0 1 6px gray"
               textAlign="center"
               justifyContent="center"
+              className={styles.homeButton}
             >
               Submit
             </Button>
@@ -128,10 +129,10 @@ const Balance_Card = () => {
             textAlign="center"
             justifyContent="center"
           >
-            <StatLabel fontWeight="thin" color="cornsilk" size="xl">
+            <StatLabel fontWeight="thin" color="cornsilk" fontSize="5xl">
               Wallet Balance
             </StatLabel>
-            <StatNumber fontWeight="normal" color="cornsilk" size="xl">
+            <StatNumber fontWeight="hairline" color="cornsilk" size="xl">
               vct0.00
             </StatNumber>
           </Stat>

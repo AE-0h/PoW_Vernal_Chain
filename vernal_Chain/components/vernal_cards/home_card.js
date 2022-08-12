@@ -80,6 +80,7 @@ const Home_Card = () => {
           textAlign="center"
           justifyContent="center"
           marginTop={70}
+          className={styles.homeButton}
 
           >
             Join the Egg Mass
