@@ -36,74 +36,108 @@ const Balance_Card = () => {
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-        <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
-          <h1 className={styles.miniHeadText}></h1>
-        <Heading as='h1' size='xl' fontWeight='thin' color='#cff9e0' paddingLeft={2}>
-        </Heading>
+        <Flex
+          justifyContent="start"
+          alignItems="start"
+          bg="linear-gradient(to right,  #212121 0%, #383838 100%) "
+          className={styles.miniHead}
+        >
+          <Heading
+            as="h1"
+            size="xl"
+            fontWeight="thin"
+            color="#cff9e0"
+            paddingLeft={2}
+          ></Heading>{" "}
         </Flex>
         <Heading
           as="h1"
           size="xl"
-          fontWeight="extrabold"
+          fontWeight="thin"
           color="cornsilk"
-          paddingTop={50}
-          fontFamily="sans-serif"
+          marginTop={20}
           textAlign="center"
           justifyContent="center"
-          className={styles.homeHeadText}
         >
           Enter your key to view balance
-        
-          </Heading>
+        </Heading>
+        <Spacer />
+
+        <Container
+          fontSize="3xl"
+          as="span"
+          textAlign="center"
+          justifyContent="center"
+          marginLeft="-1.5"
+          marginRight="-1.5"
+          fontWeight="thin"
+          color="cornsilk"
+        >
+          <form onSubmit={formik.handleSubmit}>
+            <label
+              as="h1"
+              size="xl"
+              fontWeight="thin"
+              color="cornsilk"
+              paddingTop={50}
+              textAlign="center"
+              justifyContent="center"
+            >
+              Wallet Address
+            </label>
+            <Input
+              id="walletaddress"
+              name="walletaddress"
+              type="text"
+              placeholder="Enter your wallet address"
+              justifyContent="center"
+              textAlign="center"
+              onChange={formik.handleChange}
+              value={formik.values.walletAddress}
+              marginBottom={5}
+              marginTop={5}
+            />
+
+            <Button
+              type="submit"
+              size="4xl"
+              height="100px"
+              width="800px"
+              border="1px"
+              borderColor="#C3CDDA"
+              borderRadius="18px"
+              fontSize="50px"
+              fontWeight="thin"
+              color="cornsilk"
+              textShadow="0 1 6px gray"
+              textAlign="center"
+              justifyContent="center"
+            >
+              Submit
+            </Button>
+          </form>
+
           <Spacer />
-        
-      
-          <Container
-            fontSize="3xl"
-            as="span"
+
+          <Stat
+            marginTop="1.5cm"
+            size="xl"
+            fontWeight="thin"
+            color="cornsilk"
+            paddingTop={50}
             textAlign="center"
             justifyContent="center"
-            marginLeft="-1.5"
-            marginRight="-1.5"
           >
-          <form onSubmit={formik.handleSubmit}>
-      <label as="h1"
-         size="xl"
-         fontWeight="extrabold"
-         color="cornsilk"
-         paddingTop={50}
-         fontFamily="sans-serif"
-         textAlign="center"
-         justifyContent="center"
-         className={styles.homeHeadText} >Wallet Address</label>
-      <Input
-        id='walletaddress'
-        name='walletaddress'
-        type='text'
-        onChange={formik.handleChange}
-        value={formik.values.walletAddress}
-      />
-
-      <Button type='submit'>Submit</Button>
-    </form>
-
-    <Spacer />
-            
-    <Stat marginTop='1.5cm'   size="xl"
-         fontWeight="extrabold"
-         color="cornsilk"
-         paddingTop={50}
-         fontFamily="sans-serif"
-         textAlign="center"
-         justifyContent="center"
-         className={styles.homeHeadText}>
-  <StatLabel >Wallet Balance</StatLabel>
-  <StatNumber>vct0.00</StatNumber>
-</Stat>
-
-          </Container>
+            <StatLabel fontWeight="thin" color="cornsilk" size="xl">
+              Wallet Balance
+            </StatLabel>
+            <StatNumber fontWeight="normal" color="cornsilk" size="xl">
+              vct0.00
+            </StatNumber>
+          </Stat>
+        </Container>
       </Box>
-      </div>
+    </div>
   );
 };
 

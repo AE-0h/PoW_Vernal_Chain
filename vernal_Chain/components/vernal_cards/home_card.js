@@ -36,50 +36,57 @@ const Home_Card = () => {
           bg="linear-gradient(to right,  #212121 0%, #383838 100%) "
           className={styles.miniHead}
         >
-          
         </Flex>
+        <Flex justifyContent="center" alignItems="center" flexDirection="column">
         <Heading
           as="h1"
           size="4xl"
-          fontWeight="extrabold"
+          fontWeight='hairline'
           color="cornsilk"
-          paddingTop={50}
-          fontFamily="sans-serif"
-          textAlign="center"
+          marginTop={20}
+          marginBottom={20}
           justifyContent="center"
-          className={styles.homeHeadText}
         >
           Welcome to VernalChain
+          </Heading>
           <Spacer />
       
-          <Container
+        <Heading
             maxWidth="xl"
             fontSize="3xl"
             as="span"
             textAlign="center"
             justifyContent="center"
-            color="white"
-            marginLeft="-1.5"
-            marginRight="-1.5"
+            color="cornsilk"
+            fontWeight="thin"
           >
             A proof of concept educational tool to help visualize a blockchain
             implementing a Proof of Work consensus. Click the button below to
             create a wallet instance and begin exploring the blockchain.
-          </Container>
-        </Heading>
-        <Link href="/wallet">
+          </Heading>
+        <Link style={{textDecoration: 'none'}} href="/wallet">
+          <Flex justifyContent="center" alignItems="center" flexDirection="column">
           <Button
-            size="lg"
-            colorScheme="white"
-            mt="24px"
-            className={styles.homeButton}
-            color="DarkSlateGrey"
+          size="4xl"
+          height="100px"
+          width="500px"
+          border="1px"
+          borderColor="#C3CDDA"
+          borderRadius="18px"
+          fontSize="50px"
+          fontWeight="thin"
+          color="cornsilk"
+          textShadow="0 1 6px gray"
+          textAlign="center"
+          justifyContent="center"
+          marginTop={70}
+
           >
             Join the Egg Mass
           </Button>
+          </Flex>
         </Link>
-      
-
+        </Flex>
       </Box>
     </div>
   );

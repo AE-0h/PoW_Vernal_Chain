@@ -13,6 +13,7 @@
   box-shadow: 2em 0em 2cm .2cm rgba(0, 0, 0, 0.2);
 }
 
+
 .vernalNav {
 
   color:cornsilk; 
@@ -28,7 +29,6 @@
   padding: .5 10px;
   background:linear-gradient(to right, #383838  0%,#212121  100%);
   height: 2.5rem;
-  color:rgb(207, 249, 224); 
   text-shadow: 2px 1px 1px rgb(83, 81, 81);
   border-radius: .5cm .5cm 0cm 0cm;
   box-shadow: .5px .5px 2px rgb(0, 0, 0);
@@ -40,7 +40,6 @@
 .miniFoot {
   background:linear-gradient(to right, #383838  0%,#212121  100%) fixed;
   height: 4.8rem;
-  color:rgb(207, 249, 224); 
   text-shadow: 2px 1px 1px rgb(83, 81, 81);
   border-radius: .0cm .0cm .5cm .5cm;
   box-shadow: 2px .6px 1.6px rgb(0, 0, 0);
@@ -54,14 +53,9 @@
 .miniHeadText {
   padding-left: .5cm;
   font-size : 1.9rem;
-  color:rgb(207, 249, 224);
   text-shadow: 2px 1px 1px rgb(98, 94, 73);
 }
 
-.homeHeadText {
-
-  text-shadow: 2px 1px 1px rgb(160, 159, 155);
-}
 
 
 .vernalIcon{
@@ -118,7 +112,6 @@ padding-bottom: .2cm;
   text-transform: uppercase;
   background-image: linear-gradient(to right, #434343 0%, black 100%);
   text-shadow: 0px 0px 0px rgb(39, 54, 48);
-  color:rgb(207, 249, 224); 
 
 }
 

@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "eggMass": " npm run vernalNode.js",
     "nodenetwork": "concurrently \"npm run vernal_chain\" \"npm run client\" \"npm run egg_1\" \"npm run egg_2\" \"npm run egg_3\" \"npm run egg_4\"",
     "vernal_chain": "nodemon --watch dev -e js vernal_backend/vernalChain/_vernalChain.js 3002 http://localhost:3002",
     "client": "npm run dev",

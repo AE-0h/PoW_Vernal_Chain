@@ -12,13 +12,13 @@ import {
       <div className= {styles.vernalNav}>
     <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >   
       <BreadcrumbItem>
-    <BreadcrumbLink href='/wallet'>CREATE</BreadcrumbLink>
+    <BreadcrumbLink style={{textDecoration: 'none'}} href='/wallet'>CREATE</BreadcrumbLink>
     </BreadcrumbItem>
     <BreadcrumbItem>
-      <BreadcrumbLink href='/wallet/balance'>BALANCE</BreadcrumbLink>
+      <BreadcrumbLink style={{textDecoration: 'none'}} href='/wallet/balance'>BALANCE</BreadcrumbLink>
     </BreadcrumbItem>
     <BreadcrumbItem>
-      <BreadcrumbLink href='/wallet/send'>SEND</BreadcrumbLink>
+      <BreadcrumbLink style={{textDecoration: 'none'}} href='/wallet/send'>SEND</BreadcrumbLink>
     </BreadcrumbItem>
   </Breadcrumb>
       </div>

@@ -10,23 +10,23 @@ const Vernalnav = () => {
   return (
     <>
     <div className= {styles.vernalNav}>
-      <Breadcrumb spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >   
+      <Breadcrumb  spacing='30px' separator=' '  fontSize='lg' align= 'start' paddingRight='5'  >   
   <BreadcrumbItem>
-    <BreadcrumbLink href='/wallet'>WALLET</BreadcrumbLink>
+    <BreadcrumbLink style={{textDecoration: 'none'}} href='/wallet'>WALLET</BreadcrumbLink>
   </BreadcrumbItem>
   <BreadcrumbItem>
-    <BreadcrumbLink href='/explorer'>EXPLORER</BreadcrumbLink>
-  </BreadcrumbItem>
-
-  <BreadcrumbItem>
-    <BreadcrumbLink href='/faucet'>FAUCET</BreadcrumbLink>
+    <BreadcrumbLink style={{textDecoration: 'none'}} href='/explorer'>EXPLORER</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href='/miner'>MINER</BreadcrumbLink>
+    <BreadcrumbLink style={{textDecoration: 'none'}} href='/faucet'>FAUCET</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem>
+    <BreadcrumbLink style={{textDecoration: 'none'}} href='/miner'>MINER</BreadcrumbLink>
   </BreadcrumbItem>
   <BreadcrumbItem >
-    <BreadcrumbLink href='/nodes'>NODES</BreadcrumbLink>
+    <BreadcrumbLink style={{textDecoration: 'none'}} href='/nodes'>NODES</BreadcrumbLink>
   </BreadcrumbItem>
   
 </Breadcrumb>

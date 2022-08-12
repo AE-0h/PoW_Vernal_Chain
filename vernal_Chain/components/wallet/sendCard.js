@@ -30,7 +30,6 @@ import {
     };
     const formik = useFormik({
       initialValues: {
-        email: '',
       },
       onSubmit: (values) => {
         alert(JSON.stringify(values, null, 2));
@@ -41,83 +40,86 @@ import {
       <div className={styles.background}>
         <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
           <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
-            <h1 className={styles.miniHeadText}></h1>
-          <Heading as='h1' size='xl' fontWeight='thin' color='#cff9e0' paddingLeft={2}>
-          </Heading>
           </Flex>
           <Heading
             as="h1"
             size="xl"
-            fontWeight="extrabold"
+            fontWeight="thin"
             color="cornsilk"
             paddingTop={50}
-            fontFamily="sans-serif"
             textAlign="center"
             justifyContent="center"
-            className={styles.homeHeadText}
           >
             Send VernalChain Token
             </Heading>
             <Spacer />
-            <Container
+          <Flex justifyContent='center' alignItems='center' textAlign='center' marginTop={5}>
+          <form 
               fontSize="3xl"
               as="span"
+              alignItems="center"
               textAlign="center"
               justifyContent="center"
-              marginLeft="-1.5"
-              marginRight="-1.5"
-            >
-               <form onSubmit={formik.handleSubmit}>
-        <label as="h1"
+              onSubmit={formik.handleSubmit}
+              >
+          <label 
+           as="h1"
            size="xl"
-           fontWeight="extrabold"
+           fontWeight="thin"
            color="cornsilk"
            paddingTop={50}
-           fontFamily="sans-serif"
            textAlign="center"
+           alignItems="center"
            justifyContent="center"
-           className={styles.homeHeadText} >Recipient</label>
+           >Recipient</label>
         <Input
-          id='email'
-          name='email'
-          type='email'
+          id='recipient'
+          name='raddress'
+          type='text'
+          placeholder='Recipient Address'
           onChange={formik.handleChange}
-          value={formik.values.email}
+          value={formik.values.raddress}
+          marginTop={5}
+          marginBottom={5}
+          textAlign="center"
         />
          <label as="h1"
            size="xl"
            fontWeight="extrabold"
            color="cornsilk"
-           paddingTop={50}
-           fontFamily="sans-serif"
+           marginTop={5}
            textAlign="center"
            justifyContent="center"
-           className={styles.homeHeadText} >Amount</label>
+           >Amount</label>
         <Input
           id='value'
-          name='value'
+          name='amount'
+          type='text'
+          placeholder='amount of vct to send'
           onChange={formik.handleChange}
-          value={formik.values.email}
+          value={formik.values.amount}
+          marginTop={5}
+          marginBottom={5}
+          textAlign="center"
+
         />
   
-        <Button type='submit'>Submit</Button>
+        <Button type='submit' marginTop={5}>Submit</Button>
       </form>
-  
+      </Flex>
       <Spacer />
               
-      <Stat marginTop='1.5cm'   size="xl"
-           fontWeight="extrabold"
+      <Stat marginTop={5} 
            color="cornsilk"
            paddingTop={50}
-           fontFamily="sans-serif"
            textAlign="center"
            justifyContent="center"
            className={styles.homeHeadText}>
-    <StatLabel >Transaction #</StatLabel>
-    <StatNumber>0x000000000000</StatNumber>
+    <StatLabel fontSize="5xl" fontWeight='thin'>Transaction #</StatLabel>
+    <StatNumber fontWeight='hairline' fontSize='3xl'>0x000000000000</StatNumber>
   </Stat>
   
-            </Container>
+            {/* </Container> */}
         </Box>
         </div>
     );

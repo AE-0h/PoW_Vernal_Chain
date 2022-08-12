@@ -33,7 +33,6 @@ const Create_Card = () => {
     //create keypair with eliptic curve
     let keyPair = secp256k1.genKeyPair();
     saveKeysInSession(keyPair);
-
     // display result
     encryptionValuesRef.current.value = `Private key: ${
       getKeysFromSession().privKey
@@ -41,9 +40,6 @@ const Create_Card = () => {
 Public key: ${getKeysFromSession().pubKey}
 Wallet address: 0x${getKeysFromSession().address}`;
 
-    // setIsCreated(true);
-    // setWalletStatus("unlocked");
-    // setWalletAddress(sessionStorage["address"]);
   };
 
   return (
@@ -98,9 +94,15 @@ Wallet address: 0x${getKeysFromSession().address}`;
         </Flex>{" "}
         <Textarea
           ref={encryptionValuesRef}
+          maxWidth="1000px"
+          height={28}
           justifyContent="center"
           textAlign="center"
           marginTop={20}
+          fontWeight="thin"
+          fontSize="20px"
+          color="white"
+
         ></Textarea>
         <Flex backdropFilter="auto" backdropBlur="15px" justifyContent="center">
           <Heading
