@@ -53,7 +53,6 @@ import {
             <Spacer />
           <Flex justifyContent='center' alignItems='center' textAlign='center' marginTop={5} fontWeight='thin'>
           <form 
-              fontSize="3xl"
               as="span"
               alignItems="center"
               textAlign="center"
@@ -72,7 +71,7 @@ import {
            >Recipient</label>
         <Input
           id='recipient'
-          name='raddress'
+          name='toAddress'
           type='text'
           placeholder='Recipient Address'
           onChange={formik.handleChange}
@@ -81,7 +80,8 @@ import {
           marginBottom={5}
           textAlign="center"
         />
-         <label as="h1"
+         <label 
+           as="h1"
            size="xl"
            fontWeight="thin"
            color="cornsilk"

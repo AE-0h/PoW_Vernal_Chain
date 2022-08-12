@@ -60,7 +60,7 @@ const Home_Card = () => {
             color="cornsilk"
             fontWeight="thin"
           >
-            A proof of concept educational tool to help visualize a blockchain
+            A proof of concept blockchain data structure
             implementing a Proof of Work consensus. Click the button below to
             create a wallet instance and begin exploring the blockchain.
           </Heading>
