@@ -16,10 +16,8 @@ import {
   const Send_Card = () => {
     const innerBoxStyles = {
       borderRadius: "3xl",
-      alignItems: "left",
       justifyContent: "center",
-      textAlign: "left",
-      color: "#cff9e0",
+      color: "cornsilk",
       textShadow: "0 1 4px black",
       fontSize: "20px",
       shadow: "0px 5px 10px rgba(4, 4, 4, 4)",
