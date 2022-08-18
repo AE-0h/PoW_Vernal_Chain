@@ -1,7 +1,7 @@
-import { Box, Flex, Image, Heading } from "@chakra-ui/react";
-import { SimpleGrid } from '@chakra-ui/react'
-import { Divider, AspectRatio } from '@chakra-ui/react'
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import styles from "/styles/vernalMain.module.css";
+import { useEffect, useState, useRef } from "react";
+import axios from "axios";
 
 
 const Faucet_Card = () => {
