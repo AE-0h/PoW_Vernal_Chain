@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Faucet_Card = () => {
   const innerBoxStyles = {
-    borderRadius: "3xl",
+    borderRadius: "2xl",
     alignItems: "left",
     justifyContent: "center",
     textAlign: "left",
@@ -18,6 +18,7 @@ const Faucet_Card = () => {
     borderColor: "#C3CDDA",
     boxSize: "800px",
     w: "100%",
+
   };
 
   
