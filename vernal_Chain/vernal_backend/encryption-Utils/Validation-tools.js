@@ -1,20 +1,24 @@
 const config = require("./Config");
 
+let regREAddress = /^[0-9a-f]{40}$/.test();
+let regREPubKey = /^[0-9a-f]{65}$/.test();
+let regRepValidSig = /^[0-9a-f]{1,65}$/.test();
+
 function isValidAddress(address) {
   if (typeof address !== "string") return false;
-  return /^[0-9a-f]{40}$/.test(address);
+  return regREAddress(address);
 }
 
 function isValidPublicKey(pubKey) {
   if (typeof pubKey !== "string") return false;
-  return /^[0-9a-f]{65}$/.test(pubKey);
+  return regREPubKey(pubKey);
 }
 
 function isValidSignatureFormat(signature) {
   if (!Array.isArray(signature)) return false;
   if (signature.length !== 2) return false;
-  let validNum0 = /^[0-9a-f]{1,65}$/.test(signature[0]);
-  let validNum1 = /^[0-9a-f]{1,65}$/.test(signature[1]);
+  let validNum0 = regRepValidSig(signature[0]);
+  let validNum1 = regRepValidSig(signature[1]);
   return validNum0 && validNum1;
 }
 

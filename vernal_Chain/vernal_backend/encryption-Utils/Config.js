@@ -52,7 +52,7 @@ const genesisBlock = new Block(
 
 module.exports = {
   defaultServerHost: "localhost",
-  defaultServerPort: 3001,
+  defaultServerPort: 3002,
   faucetPrivateKey,
   faucetPublicKey,
   faucetAddress,

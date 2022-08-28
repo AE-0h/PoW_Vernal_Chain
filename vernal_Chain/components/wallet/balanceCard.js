@@ -1,16 +1,40 @@
-import { Box, Flex, Image, Heading, Spacer, Container , Stat,
+import { Box,
+  Flex, 
+  Heading, 
+  Spacer, 
+  Container , 
+  Stat,
   StatLabel,
   StatNumber,
-  StatHelpText,
-  StatArrow,
-  StatGroup,} from "@chakra-ui/react";
+  useToast
+ } from "@chakra-ui/react";
+
 import styles from "/styles/vernalMain.module.css";
 import { useFormik } from "formik";
 import { Input, Button } from "@chakra-ui/react";
-import {useState} from 'react';
+import { useState, useRef } from "react";
+import { useRecoilValue } from "recoil";
+import { walletState } from "../../recoil/atoms";
+import axios from "axios";
 
 
-const Balance_Card = () => {
+const BalanceCard = () => {
+  const [userAddress, setUserAddress] = useState("");
+  const [confirmedBalance, setConfirmedBalance] = useState("");
+  const [pendingBalance, setPendingBalance] = useState("");
+  const [safeBalance, setSafeBalance] = useState("");
+  const [safeCount, setSafeCount] = useState(0);
+  const [showDetails, setShowDetails] = useState(false);
+  const nodeUrl = "http://localhost:3002";
+  const toast = useToast({
+    position: 'top',
+    title: 'Container style is updated',
+    containerStyle: {
+      width: '800px',
+      maxWidth: '100%',
+    },
+  });
+
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "left",
@@ -25,6 +49,7 @@ const Balance_Card = () => {
     boxSize: "800px",
     w: "100%",
   };
+
   const formik = useFormik({
     initialValues: {
     },
@@ -32,7 +57,6 @@ const Balance_Card = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
-  
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
@@ -142,4 +166,4 @@ const Balance_Card = () => {
   );
 };
 
-export default Balance_Card;
+export default BalanceCard;

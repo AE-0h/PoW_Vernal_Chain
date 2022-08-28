@@ -4,16 +4,25 @@ import {
   Heading,
   Button,
   Textarea,
+  useToast
 } from "@chakra-ui/react";
 import styles from "/styles/vernalMain.module.css";
 import elliptic from "elliptic";
 import { saveKeysInSession } from "../../encryption/sessions.js";
 import { getKeysFromSession } from "../../encryption/sessions.js";
-import { useRef, useEffect } from "react";
+import { useRef, useState } from "react";
+import { useRecoilState } from "recoil";
+import { walletState, address, nodeList } from "../../recoil/atoms";
+
 
 const secp256k1 = new elliptic.ec("secp256k1");
 
 const Create_Card = () => {
+  const [status, setStatus] = useRecoilState(walletState);
+  const [walletAddress, setWalletAddress] = useRecoilState(address);
+  const [isActivated, setIsActivated] = useState(false);
+  const toast = useToast()
+
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "left",
@@ -37,10 +46,24 @@ const Create_Card = () => {
     encryptionValuesRef.current.value = `Private key: ${
       getKeysFromSession().privKey
     }
-Public key: ${getKeysFromSession().pubKey}
-Wallet address: 0x${getKeysFromSession().address}`;
+    Public key: ${getKeysFromSession().pubKey}
+    Wallet address: 0x${getKeysFromSession().address}`;
 
-  };
+    setIsActivated(true);
+    setStatus("unlocked");
+    setWalletAddress(sessionStorage["address"]);
+  }
+    const toastAttempt = () => {
+    handleClick();
+    if (getKeysFromSession){
+    toast({
+    title: 'Wallet created.',
+    description: "Address, PublicKey & PrivateKey created",
+    status: 'success',
+    duration: 1100,
+      })
+    } 
+  }
 
   return (
     <div className={styles.background}>
@@ -87,7 +110,7 @@ Wallet address: 0x${getKeysFromSession().address}`;
             textAlign="center"
             justifyContent="center"
             marginTop={70}
-            onClick={handleClick}
+            onClick={toastAttempt}
             className={styles.homeButton}
           >
             Create Wallet{" "}
@@ -121,6 +144,7 @@ Wallet address: 0x${getKeysFromSession().address}`;
       </Box>{" "}
     </div>
   );
+
 };
 
 export default Create_Card;
