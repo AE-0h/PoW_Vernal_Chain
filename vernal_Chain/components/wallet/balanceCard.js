@@ -6,7 +6,9 @@ import { Box,
   Stat,
   StatLabel,
   StatNumber,
-  useToast
+  useToast,
+  useControllableProp,
+  useControllableState
  } from "@chakra-ui/react";
 
 import styles from "/styles/vernalMain.module.css";
@@ -18,7 +20,10 @@ import { walletState } from "../../recoil/atoms";
 import axios from "axios";
 
 
+
+
 const BalanceCard = () => {
+  const [value, setValue] = useControllableState({ defaultValue: 0 });
   const [userAddress, setUserAddress] = useState("");
   const [confirmedBalance, setConfirmedBalance] = useState("");
   const [pendingBalance, setPendingBalance] = useState("");
@@ -26,22 +31,22 @@ const BalanceCard = () => {
   const [safeCount, setSafeCount] = useState(0);
   const [showDetails, setShowDetails] = useState(false);
   const nodeUrl = "http://localhost:3002";
-  const toast = useToast({
-    position: 'top',
-    title: 'Container style is updated',
-    containerStyle: {
-      width: '800px',
-      maxWidth: '100%',
-    },
-  });
+
+  let balanceTick;
+  let getBalance = async (addr) => {
+   let r = await axios.get(`${nodeUrl}/address/${addr}`);
+    let b = r.data.addressData.addressBalance;
+     balanceTick= b;
+     console.log(balanceTick);
+
+  };
+
+  
 
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "left",
     justifyContent: "center",
-    textAlign: "left",
-    color: "#cff9e0",
-    textShadow: "0 1 4px black",
     fontSize: "20px",
     shadow: "0px 5px 10px rgba(4, 4, 4, 4)",
     border: ".5px",
@@ -52,11 +57,16 @@ const BalanceCard = () => {
 
   const formik = useFormik({
     initialValues: {
+      address: '',
     },
+    
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-    },
-  });
+      setUserAddress(values.address);
+      getBalance(values.address);
+    }
+  }); 
+          
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
@@ -110,16 +120,16 @@ const BalanceCard = () => {
               Wallet Address
             </label>
             <Input
-              id="walletaddress"
-              name="walletaddress"
+              id="address"
+              name="address"
               type="text"
               placeholder="Enter your wallet address"
               justifyContent="center"
               textAlign="center"
-              onChange={formik.handleChange}
-              value={formik.values.walletAddress}
               marginBottom={5}
               marginTop={5}
+              onChange={formik.handleChange}
+              value={formik.values.address}
             />
 
             <Button
@@ -156,14 +166,14 @@ const BalanceCard = () => {
             <StatLabel fontWeight="thin" color="cornsilk" fontSize="5xl">
               Wallet Balance
             </StatLabel>
-            <StatNumber fontWeight="hairline" color="cornsilk" size="xl">
-              vct0.00
+            <StatNumber fontWeight="hairline" color="cornsilk" size="xl" onSubmit={formik.handleSubmit} >
+              vct {value}
             </StatNumber>
           </Stat>
         </Container>
       </Box>
     </div>
   );
-};
-
+}
+ 
 export default BalanceCard;

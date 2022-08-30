@@ -47,23 +47,25 @@ const Create_Card = () => {
       getKeysFromSession().privKey
     }
     Public key: ${getKeysFromSession().pubKey}
-    Wallet address: 0x${getKeysFromSession().address}`;
+    Wallet address: ${getKeysFromSession().address}`;
 
     setIsActivated(true);
     setStatus("unlocked");
-    setWalletAddress(sessionStorage["address"]);
-  }
+    setWalletAddress(sessionStorage.address);
+  };
     const toastAttempt = () => {
     handleClick();
-    if (getKeysFromSession){
+    if (walletAddress != sessionStorage.address) {
+      console.log(walletAddress);
+      console.log(sessionStorage.address);
     toast({
     title: 'Wallet created.',
     description: "Address, PublicKey & PrivateKey created",
     status: 'success',
     duration: 1100,
-      })
+      });
     } 
-  }
+  };
 
   return (
     <div className={styles.background}>

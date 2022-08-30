@@ -3,7 +3,7 @@ const Transaction = require("../vernalChain/transaction");
 const CryptoUtils = require("./Encryption-tools");
 
 const faucetPrivateKey =
-  "daa00edde3309cd552fdab8099c0887c15e7cab78401c17f863b14a6fd6980e6";
+ "c30331146ab8cd77fad2662019a8bc9029fe8610efdedb4aaee8f85ad4feb356";
 const faucetPublicKey = CryptoUtils.privateKeyToPublicKey(faucetPrivateKey);
 const faucetAddress = CryptoUtils.publicKeyToAddress(faucetPublicKey);
 
