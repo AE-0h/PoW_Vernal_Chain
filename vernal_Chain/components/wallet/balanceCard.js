@@ -38,7 +38,6 @@ const BalanceCard = () => {
     let b = r.data.addressData.addressBalance;
      balanceTick= b;
      console.log(balanceTick);
-
   };
 
   
@@ -58,15 +57,17 @@ const BalanceCard = () => {
   const formik = useFormik({
     initialValues: {
       address: '',
+      re:'',
     },
-    
-    onSubmit: (values) => {
+  
+    onSubmit: async (values) => {
+      let g = await getBalance(values.address);
+      values.re = g;
       alert(JSON.stringify(values, null, 2));
       setUserAddress(values.address);
-      getBalance(values.address);
+      
     }
-  }); 
-          
+  });         
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">

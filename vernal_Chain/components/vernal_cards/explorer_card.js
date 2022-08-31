@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Heading } from "@chakra-ui/react";
+import { Box, Flex, Image, Heading, HStack , Stack, Spacer} from "@chakra-ui/react";
 import { SimpleGrid } from '@chakra-ui/react'
 import { Divider, AspectRatio } from '@chakra-ui/react'
 import styles from "/styles/vernalMain.module.css";
@@ -10,26 +10,100 @@ const Explorer_Card = () => {
     alignItems: "left",
     justifyContent: "center",
     textAlign: "left",
-    color: "#cff9e0",
-    textShadow: "0 1 4px black",
+    color: "cornsilk",
     fontSize: "20px",
-    shadow: "0px 5px 10px rgba(4, 4, 4, 4)",
+    shadow: "2px 5px 12px rgba(4, 4, 4, 4)",
     border: ".5px",
     borderColor: "#C3CDDA",
     boxSize: "800px",
     w: "100%",
+    // bg: "linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);",
+  };
+
+  const stackStyles = {
+    borderRadius: "xl",
+    alignItems: "left",
+    justifyContent: "center",
+    textAlign: "left",
+    color: "cornsilk",
+    textShadow: "0 1 4px black",
+    fontSize: "20px",
+    shadow: "1.5px 5px 8px rgba(4, 4, 4, 4)",
+    border: ".5px",
+    borderColor: "#C3CDDA",
+    boxSize: "50px",
+    w: "100%",
+    // bg: "linear-gradient(to right,  #212121 0%, #383838 100%)",
+    
+    
   };
 
   
   return (
     <div className={styles.background}>
+     <HStack spacing={8}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-        <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
-          <h1 className={styles.miniHeadText}>EXPLORER</h1>
-        <Heading as='h1' size='xl' fontWeight='thin' color='#cff9e0' paddingLeft={2}>
-        </Heading>
-      </Flex>
-      </Box>
+        <Flex fontWeight="hairline" fontSize='3xl' justifyContent='center' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead} h={10} >
+          BLOCKS
+        </Flex>
+          <Spacer />
+        <Stack fontWeight="hairline" spacing={3} marginTop={3}>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+
+        </Stack>
+        
+          </Box>
+      <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
+        <Flex fontWeight='hairline' fontSize='3xl' justifyContent='center' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead} h={10}>
+            TRANSACTIONS
+        </Flex>
+        <Stack spacing={3} marginTop={3}>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+        <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+          <Box sx={stackStyles}  backdropFilter="auto" backdropBlur="15px">
+          </Box>
+
+        </Stack>
+        
+      </Box>    
+   
+    </HStack>
+
       </div>
   );
 };

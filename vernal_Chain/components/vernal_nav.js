@@ -24,11 +24,7 @@ const Vernalnav = () => {
 
   <BreadcrumbItem>
     <BreadcrumbLink style={{textDecoration: 'none'}} href='/miner'>MINER</BreadcrumbLink>
-  </BreadcrumbItem>
-  <BreadcrumbItem >
-    <BreadcrumbLink style={{textDecoration: 'none'}} href='/nodes'>NODES</BreadcrumbLink>
-  </BreadcrumbItem>
-  
+  </BreadcrumbItem> 
 </Breadcrumb>
     </div>
     </>
