@@ -64,6 +64,8 @@ padding-bottom: .2cm;
   border-radius: .5cm .5cm .5cm .5cm;
   box-shadow: 2px 3px 3px rgb(160, 159, 155);
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .background {
@@ -80,6 +82,7 @@ padding-bottom: .2cm;
     width: 100%;
     background-position: center;
     justify-content: center;
+    align-items: center;
  
 
 }

@@ -12,7 +12,7 @@ import { saveKeysInSession } from "../../encryption/sessions.js";
 import { getKeysFromSession } from "../../encryption/sessions.js";
 import { useRef, useState } from "react";
 import { useRecoilState } from "recoil";
-import { walletState, address, nodeList } from "../../recoil/atoms";
+import { walletState, address} from "../../recoil/atoms";
 
 
 const secp256k1 = new elliptic.ec("secp256k1");
@@ -21,7 +21,7 @@ const Create_Card = () => {
   const [status, setStatus] = useRecoilState(walletState);
   const [walletAddress, setWalletAddress] = useRecoilState(address);
   const [isActivated, setIsActivated] = useState(false);
-  const toast = useToast()
+  const toast = useToast();
 
   const innerBoxStyles = {
     borderRadius: "3xl",
@@ -55,7 +55,7 @@ const Create_Card = () => {
   };
     const toastAttempt = () => {
     handleClick();
-    if (walletAddress != sessionStorage.address) {
+    if (isActivated) {
       console.log(walletAddress);
       console.log(sessionStorage.address);
     toast({

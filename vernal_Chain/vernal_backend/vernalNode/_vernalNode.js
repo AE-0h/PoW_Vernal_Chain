@@ -231,58 +231,6 @@ app.post("/register-nodes-bulk", function(req, res) {
     });
 });
 
-/**  ========================= Unregister Nodes =========================
- * Step 1) A new node will call the /register-and-broadcast-node endpoint of an existing node.
- * That node will be broadcasted to all other nodes and removed from the network.
- * Step 2) The current node will initate then remove the old node from its database.
- */
-app.post("/unregister-and-broadcast-node", function(req, res) {
-    const oldNodeURL = req.body.oldNodeURL;
-
-    // Step 1)
-    const removeNodePromise = [];
-    vernalChain.networkNodes.forEach((networkNodesUrl) => {
-        const requestOptions = {
-            uri: networkNodesUrl + "/unregister-node",
-            method: "POST",
-            body: { oldNodeURL: oldNodeURL },
-            json: true,
-        };
-
-        removeNodePromise.push(rp(requestOptions));
-    });
-
-    // Step 2)
-    Promise.all(removeNodePromise)
-        .then(() => {
-            if (vernalChain.networkNodes.includes(oldNodeURL)) {
-                vernalChain.networkNodes = vernalChain.networkNodes.filter(
-                    (node) => node !== oldNodeURL
-                );
-            }
-
-            res.json({
-                message: "Node removed from network successfully",
-            });
-        })
-        .catch((err) => res.status(400).json({ error: err.message }));
-});
-
-app.post("/unregister-node", function(req, res) {
-    if (vernalChain.currentNodeUrl === req.body.oldNodeURL) {
-        vernalChain.networkNodes = [];
-    } else {
-        const oldNodeURL = req.body.oldNodeURL;
-        vernalChain.networkNodes = vernalChain.networkNodes.filter(
-            (node) => node !== oldNodeURL
-        );
-    }
-    // update pending transactions
-    vernalChain.pendingTransactions = [];
-    res.json({
-        message: "Node removed successfully",
-    });
-});
 
 //========================= Consensus =========================
 

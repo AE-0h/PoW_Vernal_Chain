@@ -1,3 +1,9 @@
+import { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import { useRecoilValue } from "recoil";
+import {defaultNode, p2pNet, faucetSpecs, miningDetails} from "../../recoil/atoms";
+import hashes from "jshashes";
+import elliptic from "elliptic";
 import { 
   Box, 
   Flex, 
@@ -7,11 +13,12 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Input, } 
+  Input,
+  Divider, 
+  Toast,} 
 from "@chakra-ui/react";
+import { useRecoilState } from "recoil";
 import styles from "/styles/vernalMain.module.css";
-import { useEffect, useState, useRef } from "react";
-import axios from "axios";
 
 const Faucet_Card = () => {
   const innerBoxStyles = {
@@ -26,18 +33,44 @@ const Faucet_Card = () => {
     borderColor: "#C3CDDA",
     boxSize: "300px",
     w: "100%",
-    // bg: "linear-gradient(to right,  #212121 0%, #383838 100%)",
+    marginRight: "auto",
+    bg:"linear-gradient(to right,  #212121 0%, #383838 100%)",
   };
+
+  // async function postFaucetTrans() {
+
+  //   let transPayload = {
+  //     from: this.from,
+  //     to: this.to,
+  //     value: this.value,
+  //     fee: this.fee,
+  //     dateCreated: this.dateCreated,
+  //     data: this.data,
+  //     senderPubKey: this.senderPubKey,
+  //   };
+
+  //   let res = await axios.post('http://localhost:3002/transaction/broadcast', transPayload);
+
+  //   let data = res.data;
+  //   console.log(data);
+  // }
+
+  // postFaucetTrans();
+
     
   return (
-    <div className={styles.background} >
-      <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-          </Box>
-      <Heading  textAlign='center' as="h1" size="2xl" color="cornsilk" fontWeight="hairline" marginBottom='8' marginTop='10'>
+    <div className={styles.background}  justifyContent="center" alignItems='center' >
+            <Heading  textAlign='center' as="h1" size="2xl" color="cornsilk" fontWeight="hairline" marginBottom='8' marginTop='10'>
         Please enter your wallet address so we can send you some vct!!
         </Heading>
-      <form size='xl' textAlign='center' justifyContent="center" alignItems='center'>
-        <Input textAlign='center' placeholder='VernalChain wallet address' variant='outline' type= 'text' />
+      <Flex justifyContent="center" alignItems="center" flexDirection='inherit'>
+      <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
+      <Heading  textAlign='center' as="h1" size="2xl" color="cornsilk" fontWeight="hairline" marginBottom='8' marginTop='20'>
+        VernalFaucet a simple faucet solution...
+        </Heading>
+          </Box>
+      <form  justifyContent="center">
+        <Input marginLeft={4} textAlign='center' placeholder='VernalChain wallet address' variant='outline' type= 'text'  justifyContent='center' width='100%' maxWidth='1000'/>
         <Button
             size="4xl"
             height="100px"
@@ -52,11 +85,13 @@ const Faucet_Card = () => {
             textAlign="center"
             justifyContent="center"
             marginTop={30}
+            marginLeft={4}
             className={styles.homeButton}
           >
             Submit{" "}
           </Button>{" "}
-        </form>
+       </form>
+        </Flex> 
       </div>
   );
 };

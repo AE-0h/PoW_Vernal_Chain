@@ -3,12 +3,12 @@ const Transaction = require("../vernalChain/transaction");
 const CryptoUtils = require("./Encryption-tools");
 
 const faucetPrivateKey =
- "c30331146ab8cd77fad2662019a8bc9029fe8610efdedb4aaee8f85ad4feb356";
+ "ddbca68ab1126e426b7b8c46c9ba5e5db95c5f9652ac69812aadb04e11addcd6";
 const faucetPublicKey = CryptoUtils.privateKeyToPublicKey(faucetPrivateKey);
 const faucetAddress = CryptoUtils.publicKeyToAddress(faucetPublicKey);
 
 const minerPrivateKey =
-  "b86e3088b8dfbe9a667caddd42357b9953b0d1fdd5009c1c2a2f9ea793b781dc";
+  "57eba6f7286be8c3f494db155f920146956c4beb3bbd0672d6d51679273642a6";
 const minerPublicKey = CryptoUtils.privateKeyToPublicKey(faucetPrivateKey);
 const minerAddress = CryptoUtils.publicKeyToAddress(faucetPublicKey);
 

@@ -1,10 +1,9 @@
-import { Box, Flex, Image, Heading, HStack , Stack, Spacer} from "@chakra-ui/react";
-import { SimpleGrid } from '@chakra-ui/react'
-import { Divider, AspectRatio } from '@chakra-ui/react'
+import { Box, Flex, HStack , Stack, Spacer} from "@chakra-ui/react";
 import styles from "/styles/vernalMain.module.css";
 
 
 const Explorer_Card = () => {
+  
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "left",
