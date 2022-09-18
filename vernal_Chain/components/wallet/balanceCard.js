@@ -21,7 +21,8 @@ const BalanceCard = () => {
   const nodeUrl = "http://localhost:3002";
 
   let getBalance = async (addr) => {
-   let r = await axios.get(`${nodeUrl}/address/${addr}`);
+    await setUserAddress(addr);
+    let r = await axios.get(`${nodeUrl}/address/${addr}`);
     let b = r.data.addressData.addressBalance;
     setValue(b);
   };
@@ -31,15 +32,14 @@ const BalanceCard = () => {
       address: '',
     },
     onSubmit: async (values) => {
-      let g = await getBalance(values.address);
-      setUserAddress(values.address);
+      await getBalance(values.address);
     }
 
   }); 
     const innerBoxStyles = {
       borderRadius: "3xl",
       alignItems: "left",
-      justifyContent: "center",
+      justifycontent: "center",
       fontSize: "20px",
       shadow: "0px 5px 10px rgba(4, 4, 4, 4)",
       border: ".5px",
@@ -52,7 +52,7 @@ const BalanceCard = () => {
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
         <Flex
-          justifyContent="start"
+          justifycontent="start"
           alignItems="start"
           bg="linear-gradient(to right,  #212121 0%, #383838 100%) "
           className={styles.miniHead}
@@ -65,7 +65,7 @@ const BalanceCard = () => {
           color="cornsilk"
           marginTop={20}
           textAlign="center"
-          justifyContent="center"
+          justifycontent="center"
         >
           Enter your key to view balance
         </Heading>
@@ -75,7 +75,7 @@ const BalanceCard = () => {
           fontSize="3xl"
           as="span"
           textAlign="center"
-          justifyContent="center"
+          justifycontent="center"
           marginLeft="-1.5"
           marginRight="-1.5"
           fontWeight="thin"
@@ -87,9 +87,9 @@ const BalanceCard = () => {
               size="xl"
               fontWeight="thin"
               color="cornsilk"
-              paddingTop={50}
+              paddingtop={50}
               textAlign="center"
-              justifyContent="center"
+              justifycontent="center"
             >
               Wallet Address
             </label>
@@ -98,7 +98,7 @@ const BalanceCard = () => {
               name="address"
               type="text"
               placeholder="Enter your wallet address"
-              justifyContent="center"
+              justifycontent="center"
               textAlign="center"
               marginBottom={5}
               marginTop={5}
@@ -119,7 +119,7 @@ const BalanceCard = () => {
               color="cornsilk"
               textShadow="0 1 6px gray"
               textAlign="center"
-              justifyContent="center"
+              justifycontent="center"
               className={styles.homeButton}
             >
               Submit
@@ -131,9 +131,9 @@ const BalanceCard = () => {
             size="xl"
             fontWeight="thin"
             color="cornsilk"
-            paddingTop={50}
+            paddingtop={50}
             textAlign="center"
-            justifyContent="center"
+            justifycontent="center"
           >
             <StatLabel fontWeight="thin" color="cornsilk" fontSize="5xl">
               Wallet Balance

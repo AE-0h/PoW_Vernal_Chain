@@ -31,12 +31,6 @@ const Home_Card = () => {
   return (
     <div className={styles.background}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="4px">
-        <Flex
-          justifyContent="start"
-          bg="linear-gradient(to right,  #212121 0%, #383838 100%) "
-          className={styles.miniHead}
-        >
-        </Flex>
         <Flex justifyContent="center" alignItems="center" flexDirection="column">
         <Heading
           as="h1"

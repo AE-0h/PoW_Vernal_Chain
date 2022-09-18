@@ -7,16 +7,49 @@ import {
     Stat,
     StatLabel,
     StatNumber,
-   } from "@chakra-ui/react";
-  import styles from "/styles/vernalMain.module.css";
-  import { useFormik } from "formik";
-  import { Input, Button } from "@chakra-ui/react";
-  
+    useControllableState,
+  } from "@chakra-ui/react";
+import styles from "/styles/vernalMain.module.css";
+import { useFormik } from "formik";
+import { Input, Button } from "@chakra-ui/react";
+import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { walletState, faucetSpecs, miningSpecs } from "../../recoil/atoms";
+import axios from "axios";
+import hashes from "jshashes";
+import elliptic from "elliptic";
   
   const Send_Card = () => {
+    const nodeUrl = "http://localhost:3002";
+    const [value, setValue] = useControllableState({ defaultValue: 0 });
+    const [signedTx, setSignedTx] = useState("");
+    const [txHash, setTxHash] = useState("");
+    const [userAddress, setUserAddress] = useState("");
+    const [userAmount, setUserAmount] = useState("");
+    const [userRecipient, setUserRecipient] = useState("");
+    const [userBalance, setUserBalance] = useState("");
+    const [mine, setmine] = useState("");
+
+  
+    let postTrans = async (addr, amount) => {
+      let r = await axios.post(`${nodeUrl}/transaction`, {
+        from: addr,
+        to: "0x0",
+        amount: amount,
+      });
+    };
+    const formik = useFormik({
+      initialValues: {
+      },
+      onSubmit: (values) => {
+        alert(JSON.stringify(values, null, 2));
+        
+      },
+    });
+
     const innerBoxStyles = {
       borderRadius: "3xl",
-      justifyContent: "center",
+      justifycontent: "center",
       color: "cornsilk",
       textShadow: "0 1 4px black",
       fontSize: "20px",
@@ -26,37 +59,31 @@ import {
       boxSize: "800px",
       w: "100%",
     };
-    const formik = useFormik({
-      initialValues: {
-      },
-      onSubmit: (values) => {
-        alert(JSON.stringify(values, null, 2));
-      },
-    });
     
     return (
       <div className={styles.background}>
         <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-          <Flex justifyContent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
+          <Flex justifycontent='start' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
           </Flex>
           <Heading
+            marginTop={10}
             as="h1"
             size="xl"
             fontWeight="thin"
             color="cornsilk"
-            paddingTop={50}
+            paddingtop={50}
             textAlign="center"
-            justifyContent="center"
+            justifycontent="center"
           >
             Send VernalChain Token
             </Heading>
             <Spacer />
-          <Flex justifyContent='center' alignItems='center' textAlign='center' marginTop={5} fontWeight='thin'>
+          <Flex justifycontent='center' alignItems='center' textAlign='center' marginTop={5} fontWeight='thin'>
           <form 
               as="span"
               alignItems="center"
               textAlign="center"
-              justifyContent="center"
+              justifycontent="center"
               onSubmit={formik.handleSubmit}
               
               >
@@ -65,10 +92,10 @@ import {
            size="xl"
            fontWeight="thin"
            color="cornsilk"
-           paddingTop={50}
+           paddingtop={50}
            textAlign="center"
            alignItems="center"
-           justifyContent="center"
+           justifycontent="center"
            >Recipient</label>
         <Input
           id='recipient'
@@ -89,7 +116,7 @@ import {
            color="cornsilk"
            marginTop={5}
            textAlign="center"
-           justifyContent="center"
+           justifycontent="center"
            >Amount</label>
         <Input
           id='value'
@@ -117,7 +144,7 @@ import {
               color="cornsilk"
               textShadow="0 1 6px gray"
               textAlign="center"
-              justifyContent="center"
+              justifycontent="center"
               marginTop={5}
               className={styles.homeButton}
               >Send
@@ -127,21 +154,21 @@ import {
       </Flex>
       <Spacer />
               
-      <Stat marginTop={5} 
+      <Stat marginTop={10} 
            color="cornsilk"
-           paddingTop={50}
+           paddingtop={50}
            textAlign="center"
-           justifyContent="center"
+           justifycontent="center"
            className={styles.homeHeadText}>
     <StatLabel fontSize="5xl" fontWeight='thin'>Transaction #</StatLabel>
     <StatNumber fontWeight='hairline' fontSize='3xl'>0x000000000000</StatNumber>
-  </Stat>
+    </Stat>
   
             {/* </Container> */}
         </Box>
         </div>
     );
   };
-  
+
   export default Send_Card;
   

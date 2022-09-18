@@ -38,7 +38,7 @@ const Create_Card = () => {
     w: "100%",
   };
   let encryptionValuesRef = useRef(null);
-  const handleClick = () => {
+  const handleClick = async() => {
     //create keypair with eliptic curve
     let keyPair = secp256k1.genKeyPair();
     saveKeysInSession(keyPair);
@@ -52,6 +52,9 @@ const Create_Card = () => {
     setIsActivated(true);
     setStatus("unlocked");
     setWalletAddress(sessionStorage.address);
+    
+    
+
   };
     const toastAttempt = () => {
     handleClick();

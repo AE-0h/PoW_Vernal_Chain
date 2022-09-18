@@ -27,12 +27,15 @@ const Explorer_Card = () => {
     color: "cornsilk",
     textShadow: "0 1 4px black",
     fontSize: "20px",
-    shadow: "1.5px 5px 8px rgba(4, 4, 4, 4)",
+    shadow: ".5px 1px 3px rgba(4, 4, 4, 4)",
     border: ".5px",
     borderColor: "#C3CDDA",
     boxSize: "50px",
     w: "100%",
-    // bg: "linear-gradient(to right,  #212121 0%, #383838 100%)",
+    // background: "#C9CCD3",
+    // backgroundImage: "linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%)",
+    // backgroundBlendMode: "lighten",
+   
     
     
   };
@@ -42,7 +45,7 @@ const Explorer_Card = () => {
     <div className={styles.background}>
      <HStack spacing={8}>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-        <Flex fontWeight="hairline" fontSize='3xl' justifyContent='center' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead} h={10} >
+        <Flex fontWeight="hairline" fontSize='3xl' justifyContent='center' alignItems='start' h={10} >
           BLOCKS
         </Flex>
           <Spacer />
@@ -72,7 +75,7 @@ const Explorer_Card = () => {
         
           </Box>
       <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px">
-        <Flex fontWeight='hairline' fontSize='3xl' justifyContent='center' alignItems='start' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead} h={10}>
+        <Flex fontWeight='hairline' fontSize='3xl' justifyContent='center' alignItems='start' h={10}>
             TRANSACTIONS
         </Flex>
         <Stack spacing={3} marginTop={3}>

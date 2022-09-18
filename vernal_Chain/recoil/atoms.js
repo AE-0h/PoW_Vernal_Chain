@@ -18,6 +18,7 @@ export const walletState = atom({
 export const address = atom({
   key: "address",
   default: "",
+  
 });
 
 export const minerSpecs = atom({
@@ -32,7 +33,7 @@ export const minerSpecs = atom({
 });
 
 export const faucetSpecs = atom({
-    key: "faucet",
+    key: "faucetSpecs",
     default: {
       privKey: "ddbca68ab1126e426b7b8c46c9ba5e5db95c5f9652ac69812aadb04e11addcd6",
       pubKey: "93f7540e7394a4b6c88a5a53fd74a1ec84724afa2b90255c94bf22a365bf02230",

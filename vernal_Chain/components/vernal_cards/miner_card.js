@@ -1,10 +1,58 @@
 import { Box, Flex, Image, Heading, Button, Input, Center, } from "@chakra-ui/react";
+import { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import { useRecoilValue } from "recoil";
+import { useFormik } from "formik";
+import {defaultNode, p2pNet, faucetSpecs, miningDetails} from "../../recoil/atoms";
+import hashes from "jshashes";
+import elliptic from "elliptic";
+import { useRecoilState } from "recoil";
+import styles from "/styles/vernalMain.module.css";
 import { SimpleGrid } from '@chakra-ui/react'
 import { Divider, AspectRatio } from '@chakra-ui/react'
-import styles from "/styles/vernalMain.module.css";
+
+
+
 
 
 const Miner_Card = () => {
+  const mineNextBlock = async () => {
+    setIsMining(true);
+
+    // Send the request to the node to start mining
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = {
+      minerAddress: _miningDetails.address,
+      difficulty: _miningDetails.difficulty,
+    };
+
+    const miningResult = await axios.post(
+      "http://localhost:3001/mine-next-block",
+      body,
+      config
+    );
+
+    const result = miningResult.data.message;
+    setIsMining(false);
+
+    if (result) {
+      toast.success(result, {
+        position: "bottom-right",
+        theme: "colored",
+      });
+    } else {
+      toast.error("Unable to mine block.", {
+        position: "bottom-right",
+        theme: "colored",
+      });
+    }
+  };
+
   const innerBoxStyles = {
     borderRadius: "3xl",
     alignItems: "center",
@@ -28,7 +76,7 @@ const Miner_Card = () => {
         <Image src="/images/mining.svg" boxSize='350px' justifyContent='center' marginRight='-10' marginLeft='-10'/>
         <Heading minWidth='100' fontWeight="hairline" fontSize='6xl' justifyContent='center' alignItems='start' marginLeft='-10'> A simple miner... Watch in awe as transactions are gathered and orginized into blocks!</Heading>
         </Center>
-        <Input textAlign='center' placeholder='Enter your wallet address' maxWidth='1000' />
+        <Input textAlign='center' placeholder=' Address' maxWidth='1000' />
         <Button
             size="4xl"
             height="100px"
