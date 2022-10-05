@@ -8,13 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "adAstar": "npm run nodenetwork",
-    "nodenetwork": "concurrently \"npm run vernal_chain\" \"npm run client\" \"npm run egg_1\" \"npm run egg_2\" \"npm run egg_3\" \"npm run egg_4\"",
+    "nodenetwork": "concurrently \"npm run vernal_chain\" \"npm run client\" \"npm run egg_1\" \"npm run egg_2\" \"npm run egg_3\"",
     "vernal_chain": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3002 http://localhost:3002",
     "client": "npm run dev",
-    "egg_1": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 4003 http://localhost:4003",
-    "egg_2": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 4004 http://localhost:4004",
-    "egg_3": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 5005 http://localhost:5005",
-    "egg_4": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 5006 http://localhost:5006"
+    "egg_1": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3003 http://localhost:3003",
+    "egg_2": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3004 http://localhost:3004",
+    "egg_3": "nodemon --watch dev -e js vernal_backend/vernalNode/_vernalNode.js 3005 http://localhost:3005"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.4",
@@ -23,6 +22,7 @@
     "@emotion/styled": "^11.9.3",
     "axios": "^0.27.2",
     "concurrently": "^7.3.0",
+    "crypto-js": "^4.1.1",
     "elliptic": "^6.5.4",
     "formik": "^2.2.9",
     "framer-motion": "^6.5.1",

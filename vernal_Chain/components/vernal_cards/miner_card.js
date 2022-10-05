@@ -4,7 +4,6 @@ import axios from "axios";
 import { useRecoilValue } from "recoil";
 import { useFormik } from "formik";
 import {defaultNode, p2pNet, faucetSpecs, miningDetails} from "../../recoil/atoms";
-import hashes from "jshashes";
 import elliptic from "elliptic";
 import { useRecoilState } from "recoil";
 import styles from "/styles/vernalMain.module.css";

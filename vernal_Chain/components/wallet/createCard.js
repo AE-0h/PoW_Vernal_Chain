@@ -56,12 +56,12 @@ const Create_Card = () => {
     
 
   };
-    const toastAttempt = () => {
-    handleClick();
+    const toastAttempt = async () => {
+    await handleClick();
     if (isActivated) {
       console.log(walletAddress);
       console.log(sessionStorage.address);
-    toast({
+     toast({
     title: 'Wallet created.',
     description: "Address, PublicKey & PrivateKey created",
     status: 'success',

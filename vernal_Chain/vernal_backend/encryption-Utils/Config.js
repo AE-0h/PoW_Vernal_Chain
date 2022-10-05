@@ -25,7 +25,7 @@ const genesisDate = "2022-07-01T00:00:00.000Z";
 const genesisFaucetTransaction = new Transaction(
   nullAddress, // from address
   faucetAddress, // to Address
-  1000000000000, // value of transfer
+    66666666666, // value of transfer
   0, // fee for mining
   genesisDate, // dateCreated
   "genesis tx", // data (payload)
