@@ -172,6 +172,7 @@ import axios from "axios";
         signTransaction();
       }
     });
+    
     const innerBoxStyles = {
       borderRadius: "3xl",
       justifycontent: "center",
@@ -188,9 +189,10 @@ import axios from "axios";
     
     return (
       <div className={styles.background}>
-        <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px"  >
+        <Box sx={innerBoxStyles} backdropFilter="auto" backdropBlur="15px" >
           <Flex justifycontent='center' alignItems='center' bg='linear-gradient(to right,  #212121 0%, #383838 100%) ' className={styles.miniHead}>
           </Flex>
+          <Flex className={styles.sendMain}>
           <Heading
             marginTop={10}
             as="h1"
@@ -217,7 +219,8 @@ import axios from "axios";
           <FormLabel 
            as="h1"
            size="xl"
-           fontWeight="thin"
+           fontWeight='thin' 
+           fontSize='2xl'
            color="cornsilk"
            paddingtop={50}
            textAlign="center"
@@ -232,19 +235,18 @@ import axios from "axios";
           onChange={formik.handleChange}
           value={formik.values.recipient}
           marginTop={5}
-          marginBottom={5}
+          marginBottom={10}
           textAlign="center"
-          marginLeft={28}
-          marginRight={-6}
+          
          
         />
 
         </FormControl>
         <FormControl justifycontent="center" alignItems="center" textAlign="center">
-          <FormLabel textAlign="center" >Amount</FormLabel>
-          <NumberInput marginLeft={20}
-          marginRight={-20} max={balance} min={1}   
-           width={800} justifyContent='inherit' alignItems='inherit'>
+          <FormLabel textAlign="center" fontWeight='thin' fontSize='2xl'>Amount</FormLabel>
+          <NumberInput 
+           max={balance} min={1}   
+           width={1000} >
             <NumberInputField justifyContent='center' />
           <NumberInputStepper>
           <NumberIncrementStepper />
@@ -266,10 +268,9 @@ import axios from "axios";
               textShadow="0 1 6px gray"
               textAlign="center"
               justifycontent="center"
-              marginTop={5}
+              marginTop={20}
               className={styles.homeButton}
-              marginLeft={28}
-          marginRight={-6}
+            
               >Send
 
               </Button>
@@ -288,7 +289,7 @@ import axios from "axios";
     <StatNumber fontWeight='hairline' fontSize='3xl' onChange={formik.handleChange}>{txHash}</StatNumber>
     </Stat>
   
-            {/* </Container> */}
+    </Flex> 
         </Box>
         </div>
     );

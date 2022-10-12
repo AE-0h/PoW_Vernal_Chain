@@ -58,12 +58,14 @@ const BalanceCard = () => {
           className={styles.miniHead}
         >
         </Flex>
+        <Flex className={styles.sendMain}>
         <Heading
           as="h1"
           size="xl"
           fontWeight="thin"
           color="cornsilk"
-          marginTop={20}
+          marginTop={5}
+          marginBottom={10}
           textAlign="center"
           justifycontent="center"
         >
@@ -90,6 +92,7 @@ const BalanceCard = () => {
               paddingtop={50}
               textAlign="center"
               justifycontent="center"
+              marginBottom={10}
             >
               Wallet Address
             </label>
@@ -100,7 +103,8 @@ const BalanceCard = () => {
               placeholder="Enter your wallet address"
               justifycontent="center"
               textAlign="center"
-              marginBottom={5}
+              maxwidth={1000}
+              marginBottom={10}
               marginTop={5}
               onChange={formik.handleChange}
               value={formik.values.address}
@@ -143,6 +147,7 @@ const BalanceCard = () => {
             </StatNumber>
           </Stat>
         </Container>
+        </Flex>
       </Box>
     </div>
   );

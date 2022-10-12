@@ -5,7 +5,6 @@ const rp = require("request-promise");
 const cors = require("cors");
 const { StatusCodes } = require("http-status-codes");
 const { json } = require("express");
-
 const vernalChain = new Blockchain();
 
 const app = express();
@@ -14,9 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 
-/**
- * @notice - Displays statistics about the node
- */
+
 app.get("/info", (req, res) => {
     res.json({
         about: "WELCOME TO THE EGG MASS 🥚🥚🥚",
@@ -31,9 +28,7 @@ app.get("/info", (req, res) => {
     });
 });
 
-/**
- *  Displays all addresses in the node
- */
+
 app.get("/addresses", (req, res) => {
     let allAddresses = vernalChain.getAllAddresses();
     res.json(allAddresses);
@@ -42,10 +37,7 @@ app.get("/addresses", (req, res) => {
 
 //========================= Transactions =========================
 
-/**
- * @notice - Displays the transaction history of a specific address
- * @param address - Address of a wallet
- */
+
 app.get("/address/:address/transactions", (req, res) => {
     let address = req.params.address;
     let tranHistory = vernalChain.getTransactionHistory(address);
@@ -53,11 +45,7 @@ app.get("/address/:address/transactions", (req, res) => {
     console.log(tranHistory);
 });
 
-/**
- * @dev -  https://www.npmjs.com/package/http-status-codes
- * @notice - Displays the balance of a specific address
- * @param address - Address of a wallet
- */
+
 app.get("/address/:address/balance", (req, res) => {
     let address = req.params.address;
     let balance = vernalChain.getAccountBalance(address);
@@ -232,7 +220,7 @@ app.post("/register-nodes-bulk", function(req, res) {
 });
 
 
-//========================= Consensus =========================
+//========================= Nakamoto Consensus =========================
 
 // Used to correct the chain if a node has the wrong chain data.
 app.get("/consensus", function(req, res) {
@@ -265,7 +253,7 @@ app.get("/consensus", function(req, res) {
                 }
             });
 
-            if (!newLongestChain
+            if (newLongestChain
                 // (newLongestChain && !vernalChain.chainIsValid(newLongestChain))
             ) {
                 res.json({

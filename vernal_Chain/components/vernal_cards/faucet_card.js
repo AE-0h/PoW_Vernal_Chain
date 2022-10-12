@@ -217,7 +217,8 @@ export default function Faucet_Card(){
               color="cornsilk"
               fontWeight="thin"
               marginBottom="2"
-              marginTop="20"
+              marginTop="10"
+              marginLeft={30}
             >
               VernalFaucet a simple faucet solution...
             </Heading>{" "}
@@ -230,7 +231,7 @@ export default function Faucet_Card(){
               color="cornsilk"
               fontWeight="hairline"
               marginTop={2}
-              marginLeft={10}
+              marginLeft={20}
             >
               Available balance: {balance.toLocaleString("en-CA")}
               VCT{" "}

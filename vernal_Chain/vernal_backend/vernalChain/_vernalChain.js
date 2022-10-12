@@ -16,10 +16,6 @@ class Blockchain {
         this.miningJobs = {}; // map(blockDataHash => Block)
     }
 
-    /**
-     * @notice - Calculates the total mining difficulty of the chain
-     */
-    
     calcCumulativeDifficulty() {
         let difficulty = 0;
         for (let block of this.chain) {
@@ -28,13 +24,6 @@ class Blockchain {
         return difficulty;
     }
 
-    /**
-     * @notice - Adds a new block to the chain
-     * @param nonce - The nonce used to mine the block
-     * @param previousBlockHash - The hash of the previous block
-     * @param hash - The hash of the current block
-     * @return - The new block
-     */
     addBlock(tranData) {
         let tran = new Transaction(
             tranData.from,
@@ -56,13 +45,7 @@ class Blockchain {
         return this.chain[this.chain.length - 1];
     }
 
-    /**
-     * @notice - Creates a transaction object.
-     * @param sender - The sender of the transaction
-     * @param recipient - The recipient of the transaction
-     * @param amount - The amount of the transaction
-     * @return - A transaction object
-     */
+   
     addTransaction(tranData) {
         // Validate the transaction & add it to the pending transactions
         if (!ValidationUtils.isValidAddress(tranData.from))
@@ -111,11 +94,6 @@ class Blockchain {
         return tran;
     }
 
-    /**
-     * @notice - Checks for a duplicate transaction
-     * @param transactionDataHash - The transaction data hash
-     * @return - The matching transaction or undefined
-     */
     findTransactionByDataHash(transactionDataHash) {
         let allTransactions = this.getAllTransactions();
         let matchingTransactions = allTransactions.filter(
@@ -124,23 +102,11 @@ class Blockchain {
         return matchingTransactions[0];
     }
 
-    /**
-     * @notice - Adds a new transaction to the list of pending transactions
-     * @param transactionObj - An object containing the transaction details.
-     * @return - The index of the block that will hold this transaction
-     */
     addTransactionToPendingTransactions(transactionObj) {
         this.pendingTransactions.push(transactionObj);
         return this.getLastBlock()['index'] + 1;
     }
 
-    /**
-     * @notice - Returns the hash of the block
-     * @param previousBlockHash - The hash of the previous block
-     * @param currentBlockData - The data of the current block
-     * @param nonce - The nonce used to mine the block
-     * @return - The hash of the block
-     */
     hashBlock(previousBlockHash, currentBlockData, nonce) {
         const dataAsString =
             `${previousBlockHash}${nonce.toString()}${JSON.stringify(currentBlockData)}`;
@@ -148,11 +114,6 @@ class Blockchain {
         return hash;
     }
 
-    /**
-     * @notice - Checks if the given blockchain is valid by checking the hashes of each block
-     * @param blockchain - The blockchain to be checked
-     * @return - True if the blockchain is valid, false otherwise
-     */
     chainIsValid(blockchain) {
         let validChain = true;
 
@@ -195,11 +156,6 @@ class Blockchain {
         return validChain;
     }
 
-    /**
-     * @notice - Returns the block with the given hash
-     * @param blockHash - The hash of the block to be returned
-     * @return - The block with the given hash
-     */
     getBlock(blockHash) {
         let correctBlock = null;
         this.chain.forEach((block) => {
@@ -210,11 +166,7 @@ class Blockchain {
         return correctBlock;
     }
 
-    /**
-     * @notice - Returns the block with the given index
-     * @param blockIndex - The index of the block to be returned
-     * @return - The block with the given hash
-     */
+
     getBlockByIndex(blockIndex) {
         let correctBlock = null;
         this.chain.forEach((block) => {
@@ -225,11 +177,6 @@ class Blockchain {
         return correctBlock;
     }
 
-    /**
-     * @notice - Returns the block with all transactions
-     * @param blockHash - The hash of the block to be returned
-     * @return - An oblect containing the block with all transactions
-     */
     getBlockTransactions(blockHash) {
         let correctBlock = null;
         this.chain.forEach((block) => {
@@ -240,11 +187,6 @@ class Blockchain {
         return correctBlock;
     }
 
-    /**
-     * @notice - Searches the blockchain for a transaction with the given transaction data hash
-     * @param transactionHash - The transaction data hash of the transaction to be returned
-     * @return - An object containing the transaction details or undefined
-     */
     getTransaction(transactionHash) {
         let correctTransaction = null;
         let correctBlock = null;
@@ -273,20 +215,14 @@ class Blockchain {
         }
     }
 
-    /**
-     * @notice - Collects all transactions from the network
-     * @return - All transactions
-     */
+
     getAllTransactions() {
         let transactions = this.getConfirmedTransactions();
         transactions.push.apply(transactions, this.pendingTransactions);
         return transactions;
     }
 
-    /**
-     * @notice - Finds all confirmed transactions within the blockchain
-     * @return - An array of confirmed transactions
-     */
+
     getConfirmedTransactions() {
         let transactions = [];
         for (let block of this.chain) {
@@ -313,11 +249,7 @@ class Blockchain {
         return transactionsByAddress;
     }
 
-    /**
-     * @notice - Finds the balance of an address
-     * @param address - The address to find the balance for
-     * @return - The balance of the address
-     */
+
     getAccountBalance(address) {
         if (!ValidationUtils.isValidAddress(address)) {
             return { errorMsg: 'Invalid address' };
@@ -374,11 +306,6 @@ class Blockchain {
         return balance;
     }
 
-    /**
-     * @notice - Searches the blockchain for the provided address within a all transactions
-     * @param address - The address whose balance is to be returned
-     * @return - The balance of the given address
-     */
     getAddressData(address) {
         const addressTransactions = [];
 
@@ -406,10 +333,6 @@ class Blockchain {
         };
     }
 
-    /**
-     * @notice - Searches the blockchain for all addresses within all transactions
-     * @return - An array of all addresses
-     */
     getAllAddresses() {
         let addresses = new Set();
         this.chain.forEach((block) => {
@@ -424,10 +347,6 @@ class Blockchain {
         return Array.from(addresses);
     }
 
-    /**
-     * @notice - Calculates the total balance of all pending transaction addresses in the blockchain
-     * @return - An object containing the total balance of all pending transaction addresses
-     */
     calcAllConfirmedBalances() {
         let transactions = this.getConfirmedTransactions();
         let balances = {};
@@ -443,10 +362,7 @@ class Blockchain {
         return balances;
     }
 
-    /**
-     * @notice - Updates the chain to match the longest chain
-     * @param transactionsToRemove - Transactions to remove from the pending transactions
-     */
+
     removePendingTransactions(transactionsToRemove) {
         let tranHashesToRemove = new Set();
         for (let t of transactionsToRemove)
@@ -456,11 +372,7 @@ class Blockchain {
         );
     }
 
-    /**
-     * @notice - Manual Mode - Mines the next block candidate
-     * @param minerAddress - Address of the miner
-     * @param difficulty - The difficulty of the last block
-     */
+
     mineNextBlock(minerAddress, difficulty) {
         // Prepare the next block for mining
         let oldDifficulty = this.currentDifficulty;
@@ -486,10 +398,7 @@ class Blockchain {
         return newBlock;
     }
 
-    /**
-     * @notice - Prepares the miner for mining
-     * @param minerAddress - Address of the miner
-     */
+  
     getMiningJob(minerAddress) {
         let nextBlockIndex = this.chain.length;
 
@@ -562,13 +471,6 @@ class Blockchain {
         return nextBlockCandidate;
     }
 
-    /**
-     * @notice - Constructs a new candidate block from the given block template
-     * @param blockDataHash - The block data hash
-     * @param dateCreated - The date the block was created
-     * @param nonce - The nonce of the block
-     * @return - The new candidate block
-     */
     submitMinedBlock(blockDataHash, dateCreated, nonce, blockHash) {
         // Find the block candidate by its data hash
         let newBlock = this.miningJobs[blockDataHash];
@@ -600,11 +502,7 @@ class Blockchain {
         return newBlock;
     }
 
-    /**
-     * @notice - Extends the chain if the new block is valid
-     * @param newBlock - The new block candidate
-     * @return - The new candidate block
-     */
+
     extendChain(newBlock) {
         if (newBlock.index !== this.chain.length)
             return {
